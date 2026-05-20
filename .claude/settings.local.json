@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Name -Recurse -Depth 1)",
+      "Bash(Select-Object -First 80)",
+      "PowerShell(python --version)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(py *)",
+      "PowerShell(& \"F:\\\\Anaconda\\\\envs\\\\agent\\\\python.exe\" --version)",
+      "PowerShell(echo \"What is 2+2?\" | & \"F:\\\\Anaconda\\\\envs\\\\agent\\\\python.exe\" \"F:\\\\桌面\\\\Meta-Agent-with-More-Agents-main\\\\app.py\")"
+    ]
+  }
+}
