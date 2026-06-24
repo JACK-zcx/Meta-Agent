@@ -1,0 +1,290 @@
+{
+  "session_id": "63d32c6e",
+  "query": "武汉什么天气",
+  "started_at": "2026-06-24T06:40:23.650931+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "e9e18a97",
+      "timestamp": "2026-06-24T06:40:26.039469+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3373,
+      "output_chars": 158,
+      "token_estimate": 1008,
+      "latency_ms": 2354.0
+    },
+    {
+      "id": "ff165c38",
+      "timestamp": "2026-06-24T06:40:34.113964+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15675,
+      "output_chars": 411,
+      "token_estimate": 4596,
+      "latency_ms": 8062.5
+    },
+    {
+      "id": "7c3007ae",
+      "timestamp": "2026-06-24T06:40:36.875239+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 17257,
+      "output_chars": 295,
+      "token_estimate": 5014,
+      "latency_ms": 2157.3
+    },
+    {
+      "id": "353efb91",
+      "timestamp": "2026-06-24T06:40:40.350503+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 17764,
+      "output_chars": 417,
+      "token_estimate": 5194,
+      "latency_ms": 2909.3
+    },
+    {
+      "id": "23d01f0e",
+      "timestamp": "2026-06-24T06:40:42.771465+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3878,
+      "output_chars": 245,
+      "token_estimate": 1178,
+      "latency_ms": 2418.5
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "9fdc262b",
+      "timestamp": "2026-06-24T14:40:23.660914",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "e4bc3ede",
+      "timestamp": "2026-06-24T14:40:23.675889",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "d3f16118",
+      "timestamp": "2026-06-24T14:40:26.040466",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "50628877",
+      "timestamp": "2026-06-24T14:40:26.041463",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "889c5980",
+      "timestamp": "2026-06-24T14:40:26.050439",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "98d73d1b",
+      "timestamp": "2026-06-24T14:40:26.051437",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "2c9cb012",
+      "timestamp": "2026-06-24T14:40:34.115466",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "7673679b",
+      "timestamp": "2026-06-24T14:40:34.115904",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "86f06b3d",
+      "timestamp": "2026-06-24T14:40:34.692280",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "ad41c9bf",
+      "timestamp": "2026-06-24T14:40:34.717461",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "af963b6b",
+      "timestamp": "2026-06-24T14:40:36.876238",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "c3514321",
+      "timestamp": "2026-06-24T14:40:36.876238",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "56ab63ac",
+      "timestamp": "2026-06-24T14:40:37.439688",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "58e7d2da",
+      "timestamp": "2026-06-24T14:40:37.441203",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "f7443aad",
+      "timestamp": "2026-06-24T14:40:40.351007",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "5d993d78",
+      "timestamp": "2026-06-24T14:40:40.352004",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "0913cc85",
+      "timestamp": "2026-06-24T14:40:40.353003",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "278a2f5f",
+      "timestamp": "2026-06-24T14:40:40.353003",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "c63001f4",
+      "timestamp": "2026-06-24T14:40:40.353003",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "2413161b",
+      "timestamp": "2026-06-24T14:40:42.772966",
+      "agent": "Meta",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "张崇轩，你好！😊\n\n这是武汉当前的实时天气情况：\n\n| 项目 | 数据 |\n|------|------|\n| 🌤 **天气状况** | 阴云密布（overcast clouds） |\n| 🌡 **温度** | **24.23°C** |\n| 💧 **湿度** | 81% |\n| 💨 **风速** | 2.45 m/s |\n\n天气比较凉爽，不过湿度较高，出门可能会感觉有些闷，注意适当增减衣物哦！😊",
+  "finished_at": "2026-06-24T06:40:42.783937+00:00",
+  "total_llm_latency_ms": 17901.6,
+  "total_llm_calls": 5,
+  "total_agent_steps": 20
+}

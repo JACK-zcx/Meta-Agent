@@ -10,8 +10,8 @@
 
 ## UI
 
-![UI](ui.png)
-
+![UI](1.png)
+![UI](2.png)
 ## Demo
 
 https://github.com/user-attachments/assets/845eceb5-77b2-4019-935a-67b3549e56b2
@@ -99,9 +99,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React Agent:** [ReAct Prompting](https://www.promptingguide.ai/techniques/react)
 - **CoT Agent:** [Chain-of-Thought Prompting](https://www.promptingguide.ai/techniques/cot)
 - **Reflexion in CoT Agent:** [Reflexion](https://www.promptingguide.ai/techniques/reflexion)
-
-## Contact
-
-If you have any questions, suggestions, or feedback, feel free to contact us:
-
-- **Email**: jeogeoalukka@gmail.com

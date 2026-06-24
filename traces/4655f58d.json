@@ -1,0 +1,255 @@
+{
+  "session_id": "4655f58d",
+  "query": "添加记忆：Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言。",
+  "started_at": "2026-06-24T06:46:39.446895+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "42a03c3a",
+      "timestamp": "2026-06-24T06:46:43.602993+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3066,
+      "output_chars": 343,
+      "token_estimate": 974,
+      "latency_ms": 4144.1
+    },
+    {
+      "id": "8fb6ac50",
+      "timestamp": "2026-06-24T06:46:48.795319+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15853,
+      "output_chars": 414,
+      "token_estimate": 4647,
+      "latency_ms": 5181.8
+    },
+    {
+      "id": "baab7931",
+      "timestamp": "2026-06-24T06:46:51.722051+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16548,
+      "output_chars": 156,
+      "token_estimate": 4772,
+      "latency_ms": 2560.0
+    },
+    {
+      "id": "0f00184a",
+      "timestamp": "2026-06-24T06:46:53.895455+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3612,
+      "output_chars": 101,
+      "token_estimate": 1060,
+      "latency_ms": 2170.9
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "897aed98",
+      "timestamp": "2026-06-24T14:46:39.457866",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "966ee793",
+      "timestamp": "2026-06-24T14:46:39.458863",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "a6f1cc93",
+      "timestamp": "2026-06-24T14:46:43.603496",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "45d29673",
+      "timestamp": "2026-06-24T14:46:43.604495",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "437a6ecc",
+      "timestamp": "2026-06-24T14:46:43.612472",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "ceab5012",
+      "timestamp": "2026-06-24T14:46:43.613469",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "1ec8b287",
+      "timestamp": "2026-06-24T14:46:48.795822",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "b9ddd0c8",
+      "timestamp": "2026-06-24T14:46:48.796821",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "d59e1200",
+      "timestamp": "2026-06-24T14:46:49.161077",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "75908302",
+      "timestamp": "2026-06-24T14:46:49.162074",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "81e461cb",
+      "timestamp": "2026-06-24T14:46:51.722554",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "5f718ff9",
+      "timestamp": "2026-06-24T14:46:51.723552",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "434de015",
+      "timestamp": "2026-06-24T14:46:51.724550",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a584d6a2",
+      "timestamp": "2026-06-24T14:46:51.724550",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "1e5bc7b1",
+      "timestamp": "2026-06-24T14:46:51.724550",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "a46cc948",
+      "timestamp": "2026-06-24T14:46:53.896958",
+      "agent": "Meta",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "84005daa",
+      "timestamp": "2026-06-24T14:46:53.896958",
+      "agent": "Meta",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "5fe72091",
+      "timestamp": "2026-06-24T14:46:53.896958",
+      "agent": "",
+      "type": "final_result",
+      "data": {
+        "type": "final_result"
+      }
+    }
+  ],
+  "output": "已成功添加记忆：**Python** 是一种解释型、面向对象、动态数据类型的高级程序设计语言。该信息已存入语义记忆中，我可以随时调用。",
+  "finished_at": "2026-06-24T06:46:53.896958+00:00",
+  "total_llm_latency_ms": 14056.800000000001,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}
