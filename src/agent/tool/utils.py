@@ -24,20 +24,40 @@ def extract_tools_from_module(location:str):
         'func_name':func_names[i]})
     return tools
 
-def update_tool_to_module(location: str, tool_data: dict):
-    # Load the module contents
+def update_tool_to_module(location: str, tool_code: str):
+    """Replace existing tool code in the module file. tool_code is the new source code."""
     with open(location, 'r', encoding='utf-8') as f:
         module = f.read()
-    # Parse the module contents into an AST
     tree = ast.parse(module)
-    nodes=tree.body
-    tool_model,tool_definition=tool_data.get('tool').split('\n\n')
-    for index,node in enumerate(nodes):
-        if isinstance(node, ast.ClassDef) and node.name == tool_data['name'].replace(' Tool',''):
-            nodes[index]=ast.parse(tool_model)
-        elif isinstance(node, ast.FunctionDef) and node.name == tool_data['tool_name']:
-            nodes[index]=ast.parse(tool_definition)
-    # Write the updated module contents back to the file
+    nodes = tree.body
+
+    # Parse the new code to find function/class names
+    try:
+        new_tree = ast.parse(tool_code)
+        new_func_name = None
+        new_class_name = None
+        for node in ast.walk(new_tree):
+            if isinstance(node, ast.FunctionDef):
+                new_func_name = node.name
+            elif isinstance(node, ast.ClassDef):
+                new_class_name = node.name
+    except Exception:
+        # Fallback: just append
+        with open(location, 'a', encoding='utf-8') as f:
+            f.write(f'{tool_code}\n\n')
+        return
+
+    # Replace matching nodes
+    for index, node in enumerate(nodes):
+        if new_class_name and isinstance(node, ast.ClassDef) and node.name == new_class_name:
+            for n in ast.walk(new_tree):
+                if isinstance(n, ast.ClassDef):
+                    nodes[index] = n
+        elif new_func_name and isinstance(node, ast.FunctionDef) and node.name == new_func_name:
+            for n in ast.walk(new_tree):
+                if isinstance(n, ast.FunctionDef):
+                    nodes[index] = n
+
     with open(location, 'w', encoding='utf-8') as f:
         updated_module = ast.unparse(nodes)
         f.write(f'{updated_module}\n\n')
@@ -62,9 +82,10 @@ def remove_tool_from_module(location: str, tool_data: dict):
         updated_module = ast.unparse(nodes)
         f.write(f'{updated_module}\n\n')
 
-def save_tool_to_module(location: str, tool_data: dict):
-    with open(location,'a',encoding='utf-8') as f:
-        f.write(f"{dedent(tool_data.get('tool'))}\n\n")
+def save_tool_to_module(location: str, tool_code: str):
+    """Append tool source code to the module file."""
+    with open(location, 'a', encoding='utf-8') as f:
+        f.write(f"{dedent(tool_code)}\n\n")
 
 def read_markdown_file(file_path: str) -> str:
     with open(file_path, 'r',encoding='utf-8') as f:

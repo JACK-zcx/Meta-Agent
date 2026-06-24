@@ -9,6 +9,7 @@ class BaseInference(ABC):
         self.tools=tools
         self.temperature=temperature
         self.headers={'Content-Type': 'application/json'}
+        self._trace_session_id: str|None = None  # set by server for tracing
     @abstractmethod
     def invoke(self,messages:list[dict])->AIMessage:
         pass

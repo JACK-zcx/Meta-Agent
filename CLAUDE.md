@@ -8,12 +8,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # CLI mode (simplest entry point)
 python app.py
 
-# Web server with UI (WebSocket-based)
+# Web server with live visualization UI (WebSocket-based)
 python server.py           # starts on http://0.0.0.0:8000
+                           # Open browser to http://localhost:8000 for live agent topology + event stream
 
 # Install deps
 pip install -r requirements.txt
 ```
+
+### Live visualization UI (new)
+
+When `server.py` is running, the root URL (`http://localhost:8000`) serves a real-time monitoring dashboard:
+- **Left panel** — Chat interface: user queries and AI answers displayed as conversation bubbles
+- **Right panel** — Three-tab view:
+  - *Trace* — Colored cards showing each agent step (Thought/Action/Observation/Answer) in chronological order
+  - *Code* — Real-time Python code preview when ToolAgent generates tools
+  - *Stats* — Post-execution performance metrics: LLM call count, latency, estimated tokens, agent step breakdown
+- WebSocket-driven: every agent node emits structured events pushed to the browser instantly
+
+### Observability / Tracing (new)
+
+`src/tracing.py` provides a lightweight self-contained tracing system:
+- **LLM call recording**: latency (ms), estimated token count, model/provider info, input/output character counts
+- **Agent step recording**: every agent event is logged with timestamp, agent name, event type
+- **JSON file storage**: traces persisted to `traces/` directory for later analysis
+- **REST API**: `GET /api/traces` lists recent sessions, `GET /api/traces/{id}` returns full trace detail
+- Integrated into `server.py` WebSocket flow — each query automatically creates a new trace session
+- Also fixed `ChatOpenAI.invoke()` to remove `exit()` call on error (now returns error message gracefully)
 
 ## Environment
 
@@ -39,12 +60,44 @@ MetaAgent (src/agent/meta/)          ← top-level orchestrator
   └─ COTAgent (src/agent/cot/)       ← reasoning-only agent (Chain-of-Thought + Reflexion)
 ```
 
-**MetaAgent** receives the user query, calls the LLM to decide the next action, then routes to one of three branches each iteration:
+### Memory system (new)
+
+The project has a three-tier memory system (`src/memory/`):
+
+| Memory Type | Storage | TTL | Purpose |
+|---|---|---|---|
+| WorkingMemory | Pure in-memory dict | 60min | Temporary session info, fast access |
+| EpisodicMemory | SQLite + ChromaDB | Persistent | Event sequences, conversations, session logs |
+| SemanticMemory | SQLite (entity graph) + ChromaDB | Persistent | Concepts, entity relations, knowledge graph |
+
+**MemoryManager** (`src/memory/manager.py`) orchestrates all three types:
+- Smart routing: `add(content, memory_type='auto')` heuristically routes to the right store
+- Unified search across all stores simultaneously
+- Consolidation: promotes high-importance working → episodic memory
+- Shared embedding function with RAG tool (API-based)
+
+**MetaAgent** receives the user query, calls the LLM with `json=True` for structured output, then routes to one of four branches each iteration:
 - `React` — the task needs external tools → spawns a ReactAgent
 - `COT` — the task is pure reasoning → spawns a COTAgent
+- `Parallel` — multiple independent sub-tasks → spawns multiple agents concurrently via ThreadPoolExecutor
 - `Answer` — all sub-tasks done → return final answer
 
-After React or COT completes, control returns to MetaAgent which decides the next step. This loop continues until `max_iteration` is reached or MetaAgent emits a final answer.
+After React/COT/Parallel completes, control returns to MetaAgent which decides the next step. This loop continues until `max_iteration` is reached or MetaAgent emits a final answer.
+
+### Structured JSON decision protocol (recently upgraded from XML)
+
+MetaAgent now uses `json=True` + a JSON Schema prompt. The LLM outputs:
+```json
+{"action": "answer", "answer": "Direct response text..."}
+// or
+{"action": "dispatch", "agents": [{"name": "...", "query": "...", "tasks": [...], "tool": "..."}]}
+```
+
+`controller()` reads the `action` field deterministically — no fragile XML parsing. A `_parse_llm_response()` fallback handles malformed output by treating raw text as an answer. This eliminated "Agent Name: None" errors and the COTAgent NoneType crash.
+
+### Parallel agent execution (new)
+
+When MetaAgent detects multiple independent sub-tasks, it outputs multiple `<Agent>` XML blocks. The `parallel_expert` node runs them concurrently using `concurrent.futures.ThreadPoolExecutor`. Results are collected and fed back to MetaAgent for final synthesis. Configurable via `max_workers` parameter (default 4). The LLM decides whether to use parallel vs sequential based on task dependencies.
 
 **ReactAgent** follows the ReAct pattern (Reason → Act → Observe). Its state graph has three routes from the `reason` node: `action` (use an existing tool), `tool` (invoke ToolAgent to create/update/debug/delete a missing tool), or `final` (answer is ready).
 
@@ -63,6 +116,8 @@ After React or COT completes, control returns to MetaAgent which decides the nex
 **Message types.** `src/message.py` defines `SystemMessage`, `HumanMessage`, `AIMessage`, `ImageMessage`, `ToolMessage` — all inherit from `BaseMessage` and provide `to_dict()` for serialization to the LLM API format.
 
 **Prompt files.** Each agent reads its system prompt from a `.md` file in its `prompt/` subdirectory. These prompts use `{placeholder}` format strings filled at runtime with agent metadata (name, tools, instructions).
+
+**RAG (Retrieval-Augmented Generation).** `src/tool/rag.py` provides a self-contained RAG pipeline using ChromaDB (local vector store) + LLM API embeddings. Three sub-tools are exposed to agents: `rag_add_document` (ingest), `rag_search` (retrieve), `rag_ask` (context for answering). Embedding priority: LLM API → local SentenceTransformer → keyword fallback.
 
 ### Inference backends
 

@@ -6,6 +6,7 @@ from httpx import Client
 from typing import Generator
 from json import loads
 import requests
+import time
 from uuid import uuid4
 
 
@@ -20,6 +21,8 @@ class ChatOpenAI(BaseInference):
 
     @retry(stop=stop_after_attempt(3), retry=retry_if_exception_type(RequestException))
     def invoke(self, messages: list[BaseMessage], json: bool = False) -> AIMessage:
+        from src.tracing import tracer
+        t0 = time.time()
         self.headers.update({'Authorization': f'Bearer {self.api_key}'})
         url = self._get_url()
         contents = []
@@ -54,6 +57,7 @@ class ChatOpenAI(BaseInference):
                 }
             } for tool in self.tools]
 
+        result = None
         try:
             with Client(timeout=120) as client:
                 response = client.post(url=url, json=payload, headers=self.headers)
@@ -61,19 +65,51 @@ class ChatOpenAI(BaseInference):
             if json_object.get('error'):
                 raise HTTPError(json_object['error']['message'])
             message = json_object['choices'][0]['message']
+            raw_content = message.get('content')
             if json:
-                return AIMessage(loads(message.get('content')))
-            if message.get('content'):
-                return AIMessage(message.get('content'))
+                if raw_content is None:
+                    result = AIMessage('')
+                elif isinstance(raw_content, str):
+                    try:
+                        result = AIMessage(loads(raw_content))
+                    except Exception:
+                        result = AIMessage(raw_content)  # fallback: keep as string
+                else:
+                    result = AIMessage(raw_content)
+            elif raw_content:
+                result = AIMessage(raw_content)
             else:
-                tool_call = message.get('tool_calls')[0]['function']
-                return ToolMessage(id=str(uuid4()), name=tool_call['name'], args=tool_call['arguments'])
+                tool_calls = message.get('tool_calls')
+                if tool_calls:
+                    tool_call = tool_calls[0]['function']
+                    result = ToolMessage(id=str(uuid4()), name=tool_call['name'], args=tool_call['arguments'])
+                else:
+                    result = AIMessage('')  # empty response fallback
         except HTTPError as err:
             err_object = loads(err.response.text)
             print(f'\nError: {err_object["error"]["message"]}\nStatus Code: {err.response.status_code}')
+            result = AIMessage(f'Error: {err_object["error"]["message"]}')
         except ConnectionError as err:
             print(err)
-        exit()
+            result = AIMessage(f'Error: {err}')
+
+        # Record trace
+        elapsed = (time.time() - t0) * 1000
+        if self._trace_session_id:
+            try:
+                tracer.record_llm_call(
+                    session_id=self._trace_session_id,
+                    model=self.model,
+                    provider="openai_compatible",
+                    messages=contents,
+                    output=str(result.content)[:2000] if result else "",
+                    latency_ms=elapsed,
+                    agent="LLM",
+                    node="invoke"
+                )
+            except Exception:
+                pass
+        return result
 
     @retry(stop=stop_after_attempt(3), retry=retry_if_exception_type(RequestException))
     def stream(self, messages: list[BaseMessage], json=False) -> Generator[str, None, None]:
@@ -105,4 +141,4 @@ class ChatOpenAI(BaseInference):
             print(f'\nError: {err_object["error"]["message"]}\nStatus Code: {err.response.status_code}')
         except ConnectionError as err:
             print(err)
-        exit()
+        # Don't exit() — let the caller handle it

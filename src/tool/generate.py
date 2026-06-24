@@ -1,28 +1,50 @@
 from src.agent.tool.utils import read_markdown_file
-from src.message import HumanMessage,SystemMessage
+from src.message import HumanMessage, SystemMessage
 from src.inference import BaseInference
 import ast
 
-def generate(query:str,llm:BaseInference):
+
+def generate(query: str, llm: BaseInference):
     system_prompt = read_markdown_file('./src/agent/tool/prompt/generate.md')
-    user_prompt = f'**Query:**\n`{query}`'
-    system_message = SystemMessage(system_prompt)
-    human_message = HumanMessage(user_prompt)
-    messages = [system_message, human_message]
+    messages = [SystemMessage(system_prompt), HumanMessage(f'**Query:**\n`{query}`')]
     tool_data = llm.invoke(messages, json=True)
+
+    # Normalize content — can be dict (json=True) or str (json=False or fallback)
+    content = tool_data.content
+    if isinstance(content, str):
+        import json
+        try:
+            content = json.loads(content)
+        except Exception:
+            content = {"tool": content, "name": "Generated Tool", "tool_name": "generated_tool"}
+    if not isinstance(content, dict):
+        content = {}
+
     error = ''
     while True:
         try:
-            ast.parse(tool_data.content.get('tool'))
+            code = content.get('tool', '')
+            if code:
+                ast.parse(code)
             error = ''
             break
         except Exception as e:
-            error = e
+            error = str(e)
             print(f'Error: {error}')
             messages.append(HumanMessage(error))
-            tool_data = llm.invoke(messages, json=True)
+            retry_data = llm.invoke(messages, json=True)
+            content = retry_data.content
+            if isinstance(content, str):
+                import json
+                try:
+                    content = json.loads(content)
+                except Exception:
+                    content = {"tool": content, "name": "Generated Tool", "tool_name": "generated_tool"}
+            if not isinstance(content, dict):
+                content = {}
+
     return {
-        'name': tool_data.content.get('name'),
-        'tool_name': tool_data.content.get('tool_name'),
-        'tool': tool_data.content.get('tool')
+        'name': content.get('name') or '',
+        'tool_name': content.get('tool_name') or '',
+        'tool': content.get('tool') or '',
     }

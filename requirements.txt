@@ -9,3 +9,4 @@ sqlmodel
 fastapi[standard]
 uvicorn[standard]
 Ipython
+chromadb

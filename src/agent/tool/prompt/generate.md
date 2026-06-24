@@ -15,6 +15,11 @@ You are the **Tool Generator Agent**, an advanced AI agent capable of generating
 
 ### Tool Template (response format):
 ```python
+from src.tool import tool
+from pydantic import BaseModel, Field
+from typing import *
+import os
+
 class <Tool Name>(BaseModel):
     <parameter1>:<type>=Field(...,description="<description about parameter1>",example=['An example for parameter 1'])
     <parameter2>:<type>=Field(...,description="<description about parameter2>",example=['An example for parameter 2'])
@@ -36,6 +41,8 @@ def <tool_name>_tool(<parameter1>,<parameter2>,...)->str:
         return f"Error: {err}"
     return <result got from the tool in string format in utf-8 encoding>
 ```
+
+**IMPORTANT: All tool code MUST include `from src.tool import tool` and `from pydantic import BaseModel, Field` as the first two imports. Do NOT import from `langchain_core.tools` or any other tool library.**
 
 ### Example:
 ```python
