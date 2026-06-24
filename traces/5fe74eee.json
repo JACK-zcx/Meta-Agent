@@ -1,0 +1,225 @@
+{
+  "session_id": "5fe74eee",
+  "query": "北京天气怎么样",
+  "started_at": "2026-06-23T11:32:17.307356+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "ddf33b7d",
+      "timestamp": "2026-06-23T11:32:19.275805+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3756,
+      "output_chars": 216,
+      "token_estimate": 1134,
+      "latency_ms": 1958.5
+    },
+    {
+      "id": "add6abb4",
+      "timestamp": "2026-06-23T11:32:22.340103+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15733,
+      "output_chars": 387,
+      "token_estimate": 4605,
+      "latency_ms": 3054.8
+    },
+    {
+      "id": "4f9019de",
+      "timestamp": "2026-06-23T11:32:26.002623+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16231,
+      "output_chars": 644,
+      "token_estimate": 4821,
+      "latency_ms": 2628.9
+    },
+    {
+      "id": "0072eee1",
+      "timestamp": "2026-06-23T11:32:28.314575+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4469,
+      "output_chars": 436,
+      "token_estimate": 1401,
+      "latency_ms": 2309.5
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "f16fb370",
+      "timestamp": "2026-06-23T19:32:17.316332",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "f89716a6",
+      "timestamp": "2026-06-23T19:32:17.317329",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "2c661d10",
+      "timestamp": "2026-06-23T19:32:19.277307",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "2b3e7972",
+      "timestamp": "2026-06-23T19:32:19.277307",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "2414a5ef",
+      "timestamp": "2026-06-23T19:32:19.285286",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "1f451118",
+      "timestamp": "2026-06-23T19:32:19.285286",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "556641e4",
+      "timestamp": "2026-06-23T19:32:22.341604",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "261aa129",
+      "timestamp": "2026-06-23T19:32:22.341604",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "38451932",
+      "timestamp": "2026-06-23T19:32:23.373742",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "20e9df30",
+      "timestamp": "2026-06-23T19:32:23.373742",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "db8b493e",
+      "timestamp": "2026-06-23T19:32:26.004126",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "3d50305f",
+      "timestamp": "2026-06-23T19:32:26.004126",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "bfc0fbaf",
+      "timestamp": "2026-06-23T19:32:26.004126",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "685b739e",
+      "timestamp": "2026-06-23T19:32:26.004126",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "4e0d6253",
+      "timestamp": "2026-06-23T19:32:26.005122",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "Here is the current weather for **Beijing** 🌤️:\n\n| Condition          | Details                |\n|--------------------|------------------------|\n| **Description**    | Overcast clouds ☁️     |\n| **Temperature**    | 25.31°C 🌡️            |\n| **Humidity**       | 65% 💧                 |\n| **Wind Speed**     | 2.42 m/s 🌬️           |\n\nStay comfortable! Let me know if you need anything else. 😊",
+  "finished_at": "2026-06-23T11:32:28.316077+00:00",
+  "total_llm_latency_ms": 9951.7,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

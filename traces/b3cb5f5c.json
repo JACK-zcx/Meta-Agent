@@ -1,0 +1,48 @@
+{
+  "session_id": "b3cb5f5c",
+  "query": "上海的天气是什么？用你记住的信息回答",
+  "started_at": "2026-06-23T12:15:28.574030+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "d6af270b",
+      "timestamp": "2026-06-23T12:15:30.901208+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3466,
+      "output_chars": 82,
+      "token_estimate": 1013,
+      "latency_ms": 2317.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "2e580c70",
+      "timestamp": "2026-06-23T20:15:28.584003",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "f79137e9",
+      "timestamp": "2026-06-23T20:15:28.584003",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "根据我记住的信息，上海当前的天气是：阴云密布，温度23.4°C，湿度95%，风速0.06米/秒。",
+  "finished_at": "2026-06-23T12:15:30.902709+00:00",
+  "total_llm_latency_ms": 2317.2,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

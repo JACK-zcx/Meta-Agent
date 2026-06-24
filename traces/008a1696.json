@@ -1,0 +1,225 @@
+{
+  "session_id": "008a1696",
+  "query": "我学到：LangGraph是一个用于构建有状态多Agent应用的库。帮我记住这个知识点。",
+  "started_at": "2026-06-23T12:14:31.699632+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "4fd85c5e",
+      "timestamp": "2026-06-23T12:14:37.167936+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3473,
+      "output_chars": 237,
+      "token_estimate": 1060,
+      "latency_ms": 5459.3
+    },
+    {
+      "id": "2a368003",
+      "timestamp": "2026-06-23T12:14:45.280719+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15749,
+      "output_chars": 749,
+      "token_estimate": 4713,
+      "latency_ms": 8102.3
+    },
+    {
+      "id": "d993bd74",
+      "timestamp": "2026-06-23T12:14:48.449096+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16640,
+      "output_chars": 328,
+      "token_estimate": 4848,
+      "latency_ms": 2839.9
+    },
+    {
+      "id": "38e36cda",
+      "timestamp": "2026-06-23T12:14:50.389618+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3950,
+      "output_chars": 97,
+      "token_estimate": 1156,
+      "latency_ms": 1939.0
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "313d3450",
+      "timestamp": "2026-06-23T20:14:31.707610",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "ae288ff6",
+      "timestamp": "2026-06-23T20:14:31.708608",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "ac81122f",
+      "timestamp": "2026-06-23T20:14:37.169439",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "123e09cf",
+      "timestamp": "2026-06-23T20:14:37.169439",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "06cce37c",
+      "timestamp": "2026-06-23T20:14:37.177417",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "db4e0f27",
+      "timestamp": "2026-06-23T20:14:37.178415",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6c2c35d5",
+      "timestamp": "2026-06-23T20:14:45.281223",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "007b77bc",
+      "timestamp": "2026-06-23T20:14:45.282223",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "df040847",
+      "timestamp": "2026-06-23T20:14:45.608952",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "12b4d905",
+      "timestamp": "2026-06-23T20:14:45.608952",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "b428b81c",
+      "timestamp": "2026-06-23T20:14:48.449600",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "5a13a576",
+      "timestamp": "2026-06-23T20:14:48.450631",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c55128a2",
+      "timestamp": "2026-06-23T20:14:48.450631",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a7b3c450",
+      "timestamp": "2026-06-23T20:14:48.450631",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "b603ad81",
+      "timestamp": "2026-06-23T20:14:48.450631",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已成功记住知识点：**LangGraph** 是一个用于构建有状态多Agent应用的库。该信息已存入长期记忆，随时可以调用。😊",
+  "finished_at": "2026-06-23T12:14:50.391121+00:00",
+  "total_llm_latency_ms": 18340.5,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

@@ -1,0 +1,225 @@
+{
+  "session_id": "962e3615",
+  "query": "记住以下信息：1) 我最喜欢的语言是Python 2) 我的研究方向是测高卫星 3) 我是研二学生",
+  "started_at": "2026-06-23T12:12:27.531752+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "698de49f",
+      "timestamp": "2026-06-23T12:12:31.298671+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3166,
+      "output_chars": 265,
+      "token_estimate": 980,
+      "latency_ms": 3757.9
+    },
+    {
+      "id": "91be7eb6",
+      "timestamp": "2026-06-23T12:12:37.303642+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15774,
+      "output_chars": 458,
+      "token_estimate": 4637,
+      "latency_ms": 5995.0
+    },
+    {
+      "id": "7136ef39",
+      "timestamp": "2026-06-23T12:12:41.458847+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16528,
+      "output_chars": 252,
+      "token_estimate": 4794,
+      "latency_ms": 3823.2
+    },
+    {
+      "id": "7a2099cf",
+      "timestamp": "2026-06-23T12:12:44.239998+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3695,
+      "output_chars": 105,
+      "token_estimate": 1085,
+      "latency_ms": 2769.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "14d53c20",
+      "timestamp": "2026-06-23T20:12:27.540728",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "86ed2c90",
+      "timestamp": "2026-06-23T20:12:27.540728",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6553c450",
+      "timestamp": "2026-06-23T20:12:31.299174",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "a9383f10",
+      "timestamp": "2026-06-23T20:12:31.300172",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "e9281082",
+      "timestamp": "2026-06-23T20:12:31.307185",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a5db1b7a",
+      "timestamp": "2026-06-23T20:12:31.308183",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "359c2a9e",
+      "timestamp": "2026-06-23T20:12:37.304641",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "cc255036",
+      "timestamp": "2026-06-23T20:12:37.304641",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "afb0b1e4",
+      "timestamp": "2026-06-23T20:12:37.635629",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "88dad766",
+      "timestamp": "2026-06-23T20:12:37.635629",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "93ee5b53",
+      "timestamp": "2026-06-23T20:12:41.459350",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "9dccfe51",
+      "timestamp": "2026-06-23T20:12:41.460348",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a977e5e8",
+      "timestamp": "2026-06-23T20:12:41.460348",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "84298881",
+      "timestamp": "2026-06-23T20:12:41.460348",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "cafaad70",
+      "timestamp": "2026-06-23T20:12:41.460348",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已记住以下信息：\n1. **最喜欢的语言**：Python 🐍\n2. **研究方向**：测高卫星 🛰️\n3. **身份**：研二学生 🎓",
+  "finished_at": "2026-06-23T12:12:44.241991+00:00",
+  "total_llm_latency_ms": 16345.3,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

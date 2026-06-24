@@ -1,0 +1,439 @@
+{
+  "session_id": "33b06d3d",
+  "query": "你创建一个计算日期之间差多少天的工具",
+  "started_at": "2026-06-23T11:44:40.655603+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "954308ac",
+      "timestamp": "2026-06-23T11:44:48.523653+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3499,
+      "output_chars": 359,
+      "token_estimate": 1102,
+      "latency_ms": 7859.1
+    },
+    {
+      "id": "5efa4bee",
+      "timestamp": "2026-06-23T11:45:01.237561+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4129,
+      "output_chars": 2000,
+      "token_estimate": 1751,
+      "latency_ms": 12683.1
+    },
+    {
+      "id": "5e56375d",
+      "timestamp": "2026-06-23T11:45:06.304695+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 9140,
+      "output_chars": 1861,
+      "token_estimate": 3143,
+      "latency_ms": 5066.1
+    },
+    {
+      "id": "f0bace8c",
+      "timestamp": "2026-06-23T11:45:08.543466+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 5588,
+      "output_chars": 218,
+      "token_estimate": 1658,
+      "latency_ms": 2237.8
+    },
+    {
+      "id": "228608e9",
+      "timestamp": "2026-06-23T11:45:18.452923+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 17414,
+      "output_chars": 1208,
+      "token_estimate": 5320,
+      "latency_ms": 9899.5
+    },
+    {
+      "id": "d73bca3e",
+      "timestamp": "2026-06-23T11:45:19.580400+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3345,
+      "output_chars": 21,
+      "token_estimate": 961,
+      "latency_ms": 1114.5
+    },
+    {
+      "id": "c1d04596",
+      "timestamp": "2026-06-23T11:45:23.755955+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 5692,
+      "output_chars": 1067,
+      "token_estimate": 1931,
+      "latency_ms": 4175.6
+    },
+    {
+      "id": "1c9af3e2",
+      "timestamp": "2026-06-23T11:45:27.463058+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 19179,
+      "output_chars": 813,
+      "token_estimate": 5712,
+      "latency_ms": 3695.1
+    },
+    {
+      "id": "8d266183",
+      "timestamp": "2026-06-23T11:45:42.418816+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 6425,
+      "output_chars": 944,
+      "token_estimate": 2105,
+      "latency_ms": 14954.8
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "c4a3ffd6",
+      "timestamp": "2026-06-23T19:44:40.663582",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "f3fc0173",
+      "timestamp": "2026-06-23T19:44:40.664578",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "40dd0faf",
+      "timestamp": "2026-06-23T19:44:48.523653",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "COT",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "08b724ef",
+      "timestamp": "2026-06-23T19:44:48.523653",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "COT"
+      }
+    },
+    {
+      "id": "2682afff",
+      "timestamp": "2026-06-23T19:44:48.554509",
+      "agent": "COT",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "COT"
+      }
+    },
+    {
+      "id": "42c54619",
+      "timestamp": "2026-06-23T19:44:48.554509",
+      "agent": "COT",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "COT",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "fe71efa1",
+      "timestamp": "2026-06-23T19:45:01.237561",
+      "agent": "COT",
+      "type": "cot_thought",
+      "data": {
+        "type": "cot_thought",
+        "agent": "COT",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "76d846f0",
+      "timestamp": "2026-06-23T19:45:01.238564",
+      "agent": "COT",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "COT",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "eda79319",
+      "timestamp": "2026-06-23T19:45:06.304695",
+      "agent": "COT",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "COT"
+      }
+    },
+    {
+      "id": "c0f98f01",
+      "timestamp": "2026-06-23T19:45:06.304695",
+      "agent": "COT",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "COT"
+      }
+    },
+    {
+      "id": "4abe5f13",
+      "timestamp": "2026-06-23T19:45:06.304695",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "544fad81",
+      "timestamp": "2026-06-23T19:45:06.305694",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "4b69d267",
+      "timestamp": "2026-06-23T19:45:08.543466",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "87680074",
+      "timestamp": "2026-06-23T19:45:08.544467",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "9f001d59",
+      "timestamp": "2026-06-23T19:45:08.552445",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "85f153f4",
+      "timestamp": "2026-06-23T19:45:08.553443",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "ecadf142",
+      "timestamp": "2026-06-23T19:45:18.452923",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "90ad20ff",
+      "timestamp": "2026-06-23T19:45:18.453940",
+      "agent": "React",
+      "type": "tool_agent_invoke",
+      "data": {
+        "type": "tool_agent_invoke",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a29eed93",
+      "timestamp": "2026-06-23T19:45:18.464893",
+      "agent": "Tool",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Tool"
+      }
+    },
+    {
+      "id": "7f943f35",
+      "timestamp": "2026-06-23T19:45:19.580400",
+      "agent": "Tool",
+      "type": "tool_router",
+      "data": {
+        "type": "tool_router",
+        "agent": "Tool",
+        "route": "generate"
+      }
+    },
+    {
+      "id": "860cce14",
+      "timestamp": "2026-06-23T19:45:23.755955",
+      "agent": "Tool",
+      "type": "tool_code",
+      "data": {
+        "type": "tool_code",
+        "agent": "Tool",
+        "route": "generate"
+      }
+    },
+    {
+      "id": "ad746487",
+      "timestamp": "2026-06-23T19:45:23.763935",
+      "agent": "Tool",
+      "type": "tool_reload",
+      "data": {
+        "type": "tool_reload",
+        "agent": "Tool",
+        "route": "generate"
+      }
+    },
+    {
+      "id": "360cf5cc",
+      "timestamp": "2026-06-23T19:45:23.763935",
+      "agent": "Tool",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "Tool",
+        "route": "generate"
+      }
+    },
+    {
+      "id": "f5898a85",
+      "timestamp": "2026-06-23T19:45:23.767924",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "a064370f",
+      "timestamp": "2026-06-23T19:45:27.463058",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "244d0130",
+      "timestamp": "2026-06-23T19:45:27.464055",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "35fe8506",
+      "timestamp": "2026-06-23T19:45:27.464055",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "90d848c7",
+      "timestamp": "2026-06-23T19:45:27.464055",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "0aa44506",
+      "timestamp": "2026-06-23T19:45:27.464055",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 3
+      }
+    }
+  ],
+  "output": "Iteration limit reached",
+  "finished_at": "2026-06-23T11:45:42.418816+00:00",
+  "total_llm_latency_ms": 61685.600000000006,
+  "total_llm_calls": 9,
+  "total_agent_steps": 29
+}

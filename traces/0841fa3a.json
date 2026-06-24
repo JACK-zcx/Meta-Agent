@@ -1,0 +1,48 @@
+{
+  "session_id": "0841fa3a",
+  "query": "我的研究方向是什么？",
+  "started_at": "2026-06-23T12:12:45.351927+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "2ec0f5e6",
+      "timestamp": "2026-06-23T12:12:47.066097+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3372,
+      "output_chars": 53,
+      "token_estimate": 978,
+      "latency_ms": 1703.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "9901134c",
+      "timestamp": "2026-06-23T20:12:45.362898",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "711b68b1",
+      "timestamp": "2026-06-23T20:12:45.362898",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "您的研究方向是**测高卫星** 🛰️。",
+  "finished_at": "2026-06-23T12:12:47.067598+00:00",
+  "total_llm_latency_ms": 1703.2,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

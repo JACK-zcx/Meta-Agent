@@ -1,0 +1,225 @@
+{
+  "session_id": "17551b3a",
+  "query": "同时帮我记住：1) 项目截止日期是下周五 2) 团队成员有张三和李四 3) 项目名称是Meta-Agent",
+  "started_at": "2026-06-23T12:16:40.951405+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "d89bbb43",
+      "timestamp": "2026-06-23T12:16:44.521035+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3822,
+      "output_chars": 229,
+      "token_estimate": 1157,
+      "latency_ms": 3559.7
+    },
+    {
+      "id": "c29ff80d",
+      "timestamp": "2026-06-23T12:16:51.995267+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15738,
+      "output_chars": 420,
+      "token_estimate": 4616,
+      "latency_ms": 7464.8
+    },
+    {
+      "id": "3e772eba",
+      "timestamp": "2026-06-23T12:16:55.132760+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16457,
+      "output_chars": 214,
+      "token_estimate": 4763,
+      "latency_ms": 2839.7
+    },
+    {
+      "id": "878982d1",
+      "timestamp": "2026-06-23T12:16:57.998834+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4309,
+      "output_chars": 106,
+      "token_estimate": 1261,
+      "latency_ms": 2864.1
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "c9b73b05",
+      "timestamp": "2026-06-23T20:16:40.961378",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "a89db3e9",
+      "timestamp": "2026-06-23T20:16:40.961378",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "c0cdb1a0",
+      "timestamp": "2026-06-23T20:16:44.521538",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "b276fc71",
+      "timestamp": "2026-06-23T20:16:44.522537",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "19439cd0",
+      "timestamp": "2026-06-23T20:16:44.529518",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "bc16b7b6",
+      "timestamp": "2026-06-23T20:16:44.530515",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6c1bd8d4",
+      "timestamp": "2026-06-23T20:16:51.996768",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "127e8c41",
+      "timestamp": "2026-06-23T20:16:51.996768",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "79d362cd",
+      "timestamp": "2026-06-23T20:16:52.291514",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "1d26fb8a",
+      "timestamp": "2026-06-23T20:16:52.292517",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "fad2d4db",
+      "timestamp": "2026-06-23T20:16:55.133759",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "a0c6005c",
+      "timestamp": "2026-06-23T20:16:55.133759",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "e24642a5",
+      "timestamp": "2026-06-23T20:16:55.133759",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "fabb179a",
+      "timestamp": "2026-06-23T20:16:55.133759",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "f1999b72",
+      "timestamp": "2026-06-23T20:16:55.134757",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已成功记住以下信息：\n1. **项目截止日期**是下周五\n2. **团队成员**有张三和李四\n3. **项目名称**是Meta-Agent",
+  "finished_at": "2026-06-23T12:16:58.000336+00:00",
+  "total_llm_latency_ms": 16728.3,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

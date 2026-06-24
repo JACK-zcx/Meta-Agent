@@ -1,0 +1,225 @@
+{
+  "session_id": "35ac66ee",
+  "query": "杭州什么天气",
+  "started_at": "2026-06-23T11:42:53.856203+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "64a28632",
+      "timestamp": "2026-06-23T11:42:56.606527+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3803,
+      "output_chars": 161,
+      "token_estimate": 1132,
+      "latency_ms": 2738.8
+    },
+    {
+      "id": "ba6f5a73",
+      "timestamp": "2026-06-23T11:43:01.373719+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15678,
+      "output_chars": 459,
+      "token_estimate": 4610,
+      "latency_ms": 4756.7
+    },
+    {
+      "id": "cefb9cf1",
+      "timestamp": "2026-06-23T11:43:06.154998+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16265,
+      "output_chars": 256,
+      "token_estimate": 4720,
+      "latency_ms": 3130.0
+    },
+    {
+      "id": "32fcc733",
+      "timestamp": "2026-06-23T11:43:09.140987+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4188,
+      "output_chars": 163,
+      "token_estimate": 1243,
+      "latency_ms": 2984.0
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "84708d02",
+      "timestamp": "2026-06-23T19:42:53.867763",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "2bbcec7d",
+      "timestamp": "2026-06-23T19:42:53.867763",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "4a93c54b",
+      "timestamp": "2026-06-23T19:42:56.607030",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "3757f9fe",
+      "timestamp": "2026-06-23T19:42:56.608029",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "bb0fc931",
+      "timestamp": "2026-06-23T19:42:56.616008",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "d5256c3d",
+      "timestamp": "2026-06-23T19:42:56.617005",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "f50d4609",
+      "timestamp": "2026-06-23T19:43:01.375221",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "2f77422e",
+      "timestamp": "2026-06-23T19:43:01.375221",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "dfd18278",
+      "timestamp": "2026-06-23T19:43:03.024541",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "8fd21c51",
+      "timestamp": "2026-06-23T19:43:03.024541",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "f3a44626",
+      "timestamp": "2026-06-23T19:43:06.155996",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "28a24b41",
+      "timestamp": "2026-06-23T19:43:06.155996",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "683f9574",
+      "timestamp": "2026-06-23T19:43:06.155996",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "3f613573",
+      "timestamp": "2026-06-23T19:43:06.155996",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "c47b9290",
+      "timestamp": "2026-06-23T19:43:06.156993",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "你好，张崇轩！以下是杭州当前的实时天气情况：\n\n- **天气状况**：多云（阴天）\n- **温度**：23.19°C\n- **湿度**：97%\n- **风速**：0.68 m/s\n\n天气比较潮湿，建议出门时注意携带雨具，以防小雨。祝您一天愉快！",
+  "finished_at": "2026-06-23T11:43:09.142492+00:00",
+  "total_llm_latency_ms": 13609.5,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

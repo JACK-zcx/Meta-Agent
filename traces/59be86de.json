@@ -1,0 +1,48 @@
+{
+  "session_id": "59be86de",
+  "query": "你现在有什么工具",
+  "started_at": "2026-06-23T11:48:30.619193+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "c86affce",
+      "timestamp": "2026-06-23T11:48:32.561609+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3585,
+      "output_chars": 313,
+      "token_estimate": 1113,
+      "latency_ms": 1932.4
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "80a36aee",
+      "timestamp": "2026-06-23T19:48:30.628168",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "61898fb5",
+      "timestamp": "2026-06-23T19:48:30.629166",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "我目前有以下工具可用：\n\n- **Weather Tool**：天气查询\n- **RAG Add Document Tool**：添加文档到知识库\n- **RAG Search Tool**：搜索知识库\n- **RAG Ask Tool**：向知识库提问\n- **Memory Remember Tool**：记住信息\n- **Memory Recall Tool**：回忆已记住的信息\n- **Memory Learn Tool**：学习知识并存入语义记忆\n- **Memory Record Event Tool**：记录事件到情景记忆",
+  "finished_at": "2026-06-23T11:48:32.562608+00:00",
+  "total_llm_latency_ms": 1932.4,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

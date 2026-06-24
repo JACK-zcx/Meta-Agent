@@ -1,0 +1,161 @@
+[
+    {
+        "task_id": "memory_store_and_recall_1",
+        "category": "memory",
+        "description": "存储一条信息并在下一轮正确召回",
+        "turns": [
+            {"role": "user", "query": "帮我记住我的名字叫张崇轩，我住在北京"},
+            {"role": "user", "query": "我叫什么名字？我住在哪个城市？"}
+        ],
+        "expected": ["张崇轩", "北京"],
+        "metric": "recall_accuracy"
+    },
+    {
+        "task_id": "memory_store_and_recall_2",
+        "category": "memory",
+        "description": "存储多条信息并召回特定一条",
+        "turns": [
+            {"role": "user", "query": "记住以下信息：1) 我最喜欢的语言是Python 2) 我的研究方向是测高卫星 3) 我是研二学生"},
+            {"role": "user", "query": "我的研究方向是什么？"}
+        ],
+        "expected": ["测高卫星"],
+        "metric": "recall_accuracy"
+    },
+    {
+        "task_id": "memory_multi_turn_state_tracking",
+        "category": "memory",
+        "description": "多轮对话中持续跟踪用户状态变化",
+        "turns": [
+            {"role": "user", "query": "帮我创建一个购物清单，我要买苹果、香蕉和牛奶"},
+            {"role": "user", "query": "把牛奶改成酸奶，然后告诉我现在清单里有什么"},
+            {"role": "user", "query": "我之前让你买了哪些水果？"}
+        ],
+        "expected": ["苹果", "香蕉", "酸奶"],
+        "metric": "state_tracking"
+    },
+    {
+        "task_id": "tool_select_weather_1",
+        "category": "tool_use",
+        "description": "正确选择天气工具查询城市天气",
+        "turns": [
+            {"role": "user", "query": "北京今天天气怎么样？"}
+        ],
+        "expected": ["weather_tool"],
+        "metric": "tool_selection"
+    },
+    {
+        "task_id": "tool_select_rag_1",
+        "category": "tool_use",
+        "description": "用RAG工具检索之前添加的文档内容",
+        "turns": [
+            {"role": "user", "query": "请先添加文档：人工智能是计算机科学的一个分支，它研究如何让计算机模拟人类智能。机器学习是AI的核心技术。"},
+            {"role": "user", "query": "根据我之前添加的文档，AI的核心技术是什么？"}
+        ],
+        "expected": ["机器学习", "machine learning"],
+        "metric": "rag_retrieval"
+    },
+    {
+        "task_id": "tool_select_memory_1",
+        "category": "tool_use",
+        "description": "用Memory Remember存储学习内容",
+        "turns": [
+            {"role": "user", "query": "我学到：LangGraph是一个用于构建有状态多Agent应用的库。帮我记住这个知识点。"},
+            {"role": "user", "query": "LangGraph是什么？用我之前告诉你的信息回答。"}
+        ],
+        "expected": ["LangGraph", "有状态", "多Agent"],
+        "metric": "memory_retrieval"
+    },
+    {
+        "task_id": "greeting_1",
+        "category": "basic",
+        "description": "简单问候不应触发Agent dispatch",
+        "turns": [
+            {"role": "user", "query": "你好！"}
+        ],
+        "expected": ["hello", "你好", "帮助", "hi"],
+        "metric": "direct_answer"
+    },
+    {
+        "task_id": "greeting_2",
+        "category": "basic",
+        "description": "问系统能力应直接回答",
+        "turns": [
+            {"role": "user", "query": "你有什么功能？"}
+        ],
+        "expected": ["天气", "记忆", "RAG", "知识库", "工具"],
+        "metric": "direct_answer"
+    },
+    {
+        "task_id": "complex_1_weather_and_memory",
+        "category": "complex",
+        "description": "先查天气再记住查询结果",
+        "turns": [
+            {"role": "user", "query": "查一下上海的天气，然后把结果记住"},
+            {"role": "user", "query": "上海的天气是什么？用你记住的信息回答"}
+        ],
+        "expected": ["上海", "温度", "湿度"],
+        "metric": "multi_step"
+    },
+    {
+        "task_id": "complex_2_rag_and_memory",
+        "category": "complex",
+        "description": "添加文档到知识库，然后在记忆中记录文档标题",
+        "turns": [
+            {"role": "user", "query": "添加这篇文档到知识库：标题为'深度学习入门'，内容是'深度学习是机器学习的一个子集，使用多层神经网络来处理复杂模式。CNN用于图像识别，RNN用于序列数据，Transformer用于自然语言处理。'"},
+            {"role": "user", "query": "根据知识库，Transformer主要用于什么领域？同时记住'深度学习入门'这个文档已经被查询过。"},
+            {"role": "user", "query": "我之前查询过哪个文档？"}
+        ],
+        "expected": ["自然语言处理", "深度学习入门"],
+        "metric": "multi_step"
+    },
+    {
+        "task_id": "error_empty_input",
+        "category": "robustness",
+        "description": "空输入不应崩溃",
+        "turns": [
+            {"role": "user", "query": ""}
+        ],
+        "expected": [],
+        "metric": "no_crash"
+    },
+    {
+        "task_id": "error_long_input",
+        "category": "robustness",
+        "description": "超长输入不应崩溃",
+        "turns": [
+            {"role": "user", "query": "请帮我分析以下文本：人工智能技术正在快速发展。人工智能技术正在快速发展。人工智能技术正在快速发展。人工智能技术正在快速发展。人工智能技术正在快速发展。"}
+        ],
+        "expected": [],
+        "metric": "no_crash"
+    },
+    {
+        "task_id": "error_nonsense",
+        "category": "robustness",
+        "description": "无意义输入不应崩溃",
+        "turns": [
+            {"role": "user", "query": "asdfghjkl qwertyuiop zxcvbnm"}
+        ],
+        "expected": [],
+        "metric": "no_crash"
+    },
+    {
+        "task_id": "tool_creation_1",
+        "category": "tool_creation",
+        "description": "请求创建新工具时走ToolAgent路径",
+        "turns": [
+            {"role": "user", "query": "帮我创建一个能计算两个数字乘积的工具函数"}
+        ],
+        "expected": ["tool_agent", "created", "generated", "创建", "生成"],
+        "metric": "tool_creation"
+    },
+    {
+        "task_id": "parallel_1",
+        "category": "parallel",
+        "description": "多个独立查询应在一次dispatch中完成",
+        "turns": [
+            {"role": "user", "query": "同时帮我记住：1) 项目截止日期是下周五 2) 团队成员有张三和李四 3) 项目名称是Meta-Agent"}
+        ],
+        "expected": ["下周五", "张三", "李四", "Meta-Agent"],
+        "metric": "memory_batch"
+    }
+]

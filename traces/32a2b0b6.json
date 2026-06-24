@@ -1,0 +1,48 @@
+{
+  "session_id": "32a2b0b6",
+  "query": "现在迭代限制多少次",
+  "started_at": "2026-06-23T11:49:18.551646+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "97e14b70",
+      "timestamp": "2026-06-23T11:49:20.402852+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3468,
+      "output_chars": 50,
+      "token_estimate": 1005,
+      "latency_ms": 1841.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "17bd6623",
+      "timestamp": "2026-06-23T19:49:18.560622",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "113446c6",
+      "timestamp": "2026-06-23T19:49:18.561620",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "系统默认的迭代限制是 25 次。",
+  "finished_at": "2026-06-23T11:49:20.403853+00:00",
+  "total_llm_latency_ms": 1841.2,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

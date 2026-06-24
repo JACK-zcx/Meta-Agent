@@ -1,0 +1,48 @@
+{
+  "session_id": "ed3520db",
+  "query": "计算一下2023年2月11日距离现在多少天",
+  "started_at": "2026-06-23T11:47:12.780057+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "8f0f3f4d",
+      "timestamp": "2026-06-23T11:47:26.514156+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3552,
+      "output_chars": 58,
+      "token_estimate": 1031,
+      "latency_ms": 13726.1
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "439f7b37",
+      "timestamp": "2026-06-23T19:47:12.788035",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "f1a95cc4",
+      "timestamp": "2026-06-23T19:47:12.788035",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "需要知道今天的日期才能准确计算。请提供当前日期。",
+  "finished_at": "2026-06-23T11:47:26.515157+00:00",
+  "total_llm_latency_ms": 13726.1,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

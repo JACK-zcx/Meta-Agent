@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta-Agent — Live Monitor</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d;
+    --text: #c9d1d9; --dim: #8b949e; --accent: #58a6ff;
+    --green: #3fb950; --yellow: #d2991d; --red: #f85149;
+    --purple: #a371f7; --cyan: #39c5cf;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg); color: var(--text); height: 100vh;
+    display: flex; flex-direction: column;
+  }
+  header {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    padding: 8px 16px; display: flex; align-items: center; gap: 10px;
+  }
+  header h1 { font-size: 15px; font-weight: 600; }
+  .badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 10px;
+    background: #1a2f1a; color: var(--green); border: 1px solid #2ea043;
+  }
+  .badge.warn { background: #2f2a1a; color: var(--yellow); border-color: #d2991d; }
+  .badge.error { background: #2f1a1a; color: var(--red); border-color: #f85149; }
+  .controls { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+  .controls input[type=text] {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 7px 12px; border-radius: 8px; width: 340px; font-size: 13px;
+  }
+  .controls button, .controls .icon-btn {
+    background: var(--accent); color: #fff; border: none; padding: 7px 14px;
+    border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600;
+  }
+  .controls button:hover, .icon-btn:hover { opacity: 0.85; }
+  .controls button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .icon-btn { padding: 7px 12px; font-size: 16px; }  /* emoji button */
+
+  /* ===== Main ===== */
+  main {
+    flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; gap: 1px; background: var(--border); overflow: hidden;
+  }
+  .panel { background: var(--panel); display: flex; flex-direction: column; overflow: hidden; }
+  .panel-header {
+    font-size: 11px; font-weight: 700; color: var(--dim); text-transform: uppercase;
+    letter-spacing: 1px; padding: 8px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); flex-shrink: 0; }
+  .dot.active { background: var(--green); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* Chat */
+  #chat-panel { }
+  #chat-container { flex: 1; overflow-y: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .chat-empty {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: var(--dim); font-size: 14px; text-align: center; line-height: 1.8;
+  }
+  .chat-sep { height: 1px; background: var(--border); margin: 8px 0; opacity: 0.5; }
+  .chat-msg { display: flex; gap: 10px; animation: fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+  .chat-msg .avatar {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;
+  }
+  .chat-msg.user .avatar { background: #1a3a5c; color: var(--accent); }
+  .chat-msg.assistant .avatar { background: #1a2f1a; color: var(--green); }
+  .chat-msg .bubble {
+    max-width: 85%; padding: 10px 14px; border-radius: 10px;
+    font-size: 13px; line-height: 1.65; word-break: break-word;
+  }
+  .chat-msg.user .bubble { background: #1c2a3a; color: #e6edf3; }
+  .chat-msg.assistant .bubble { background: #1a241a; color: #d2e8d2; border: 1px solid #2a3a2a; }
+  .bubble h1,.bubble h2,.bubble h3 { color: var(--accent); margin: 6px 0 3px; font-size: 1.05em; }
+  .bubble strong { color: #fff; }
+  .bubble li { margin-left: 14px; }
+  .bubble code { background: rgba(120,120,120,0.25); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+  .bubble .typing { display: inline-block; width: 6px; height: 11px; background: var(--green); animation: blink 0.6s infinite; vertical-align: middle; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .chat-msg.system .avatar { background: #2a2a1a; color: var(--yellow); }
+  .chat-msg.system .bubble { background: #2a2a1a; color: #d2c84a; border: 1px solid #3a3a1a; font-size: 12px; }
+
+  /* Document bar */
+  #doc-bar {
+    display: none; padding: 10px 16px; border-top: 1px solid var(--border);
+    background: var(--bg); gap: 8px; align-items: center;
+  }
+  #doc-bar textarea {
+    flex: 1; background: #0d1117; border: 1px solid var(--border); color: var(--text);
+    border-radius: 6px; padding: 8px; font-size: 12px; resize: vertical;
+    height: 70px; font-family: 'SF Mono','Consolas',monospace;
+  }
+  #doc-bar input[type=text] { background: #0d1117; border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 10px; font-size: 12px; width: 120px; }
+  #doc-bar button { background: var(--purple); color: #fff; border: none; border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 12px; white-space: nowrap; }
+  #doc-bar.open { display: flex; }
+
+  /* Trace (horizontal) */
+  #trace-panel { }
+  #trace-container { flex: 1; overflow-y: auto; padding: 4px 8px; }
+  .tl-row {
+    display: flex; align-items: center; gap: 8px; padding: 4px 8px;
+    border-bottom: 1px solid rgba(48,54,61,0.3); font-size: 12px; min-height: 26px;
+  }
+  .tl-row:hover { background: rgba(255,255,255,0.02); }
+  .tl-icon { width: 16px; text-align: center; flex-shrink: 0; font-size: 11px; }
+  .tl-bar { width: 2px; height: 16px; border-radius: 1px; flex-shrink: 0; }
+  .tl-label { font-weight: 600; color: var(--dim); flex-shrink: 0; min-width: 60px; font-size: 11px; }
+  .tl-body { color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tl-time { color: var(--dim); font-size: 10px; flex-shrink: 0; }
+  .tl-bar.green { background: var(--green); } .tl-bar.cyan { background: var(--cyan); }
+  .tl-bar.purple { background: var(--purple); } .tl-bar.yellow { background: var(--yellow); }
+  .tl-bar.red { background: var(--red); }
+
+  #stats-container { padding:10px; overflow-y:auto; flex:1; }
+  .stat-row { display:flex; justify-content:space-between; padding:6px 8px; border-bottom:1px solid var(--border); font-size:13px; }
+  .stat-row .val { font-weight:600; color:#e6edf3; }
+  .stat-section { margin-bottom:16px; }
+  .stat-section h4 { font-size:11px; color:var(--dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; padding:4px 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Meta-Agent with More Agents</h1>
+  <span class="badge" id="status-badge">IDLE</span>
+  <span style="font-size:11px;color:var(--dim);" id="iter-info"></span>
+  <div class="controls">
+    <button class="icon-btn" id="doc-toggle-btn" onclick="toggleDocBar()" title="Add document to RAG">📄</button>
+    <input id="query-input" type="text" placeholder="输入查询... 点击 📄 添加文档" />
+    <button id="send-btn" onclick="sendQuery()">Send</button>
+    <button onclick="resetUI()" style="background:var(--bg);border:1px solid var(--border);color:var(--text);">Reset</button>
+  </div>
+</header>
+
+<!-- Document paste bar (hidden by default) -->
+<div id="doc-bar">
+  <input type="text" id="doc-title" placeholder="文档标题" />
+  <textarea id="doc-text" placeholder="粘贴文档内容到这里... 支持纯文本和 Markdown。提交后会自动分词、向量化并存入 RAG 知识库。"></textarea>
+  <button onclick="sendDocument()">Add to RAG</button>
+</div>
+
+<main>
+  <!-- LEFT: Chat -->
+  <div class="panel" id="chat-panel">
+    <div class="panel-header"><span class="dot" id="chat-dot"></span> CONVERSATION</div>
+    <div id="chat-container">
+      <div class="chat-empty">Enter a query above or click 📄 to add documents.<br/>All conversations are preserved across turns.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Trace / Code / Stats -->
+  <div class="panel" id="trace-panel">
+    <div class="panel-header" style="justify-content:space-between;">
+      <span style="display:flex;align-items:center;gap:8px;">
+        <span class="dot" id="trace-dot"></span>
+        <span id="right-tab-label">EXECUTION TRACE</span>
+      </span>
+      <span style="display:flex;gap:4px;">
+        <button onclick="switchRightTab('log')" id="tab-log-btn"
+          style="font-size:11px;padding:2px 8px;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer;">Trace</button>
+        <button onclick="switchRightTab('code')" id="tab-code-btn"
+          style="font-size:11px;padding:2px 8px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:4px;cursor:pointer;">Code</button>
+        <button onclick="switchRightTab('stats')" id="tab-stats-btn"
+          style="font-size:11px;padding:2px 8px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:4px;cursor:pointer;">Stats</button>
+      </span>
+    </div>
+    <div id="trace-container">
+      <div style="color:var(--dim);font-size:13px;padding:20px;text-align:center;">Agent execution steps will appear here...</div>
+    </div>
+    <div id="code-panel" style="display:none;flex:1;overflow:hidden;">
+      <div id="code-content" style="flex:1;background:#0d1117;border:1px solid var(--border);border-radius:6px;padding:10px;overflow:auto;font-family:'SF Mono','Consolas',monospace;font-size:12px;white-space:pre-wrap;color:#e6edf3;"></div>
+    </div>
+    <div id="stats-container" style="display:none;flex:1;overflow-y:auto;padding:10px;">
+      <div style="color:var(--dim);font-size:13px;text-align:center;padding-top:30px;">执行一次查询后，性能统计将显示在这里...</div>
+    </div>
+  </div>
+</main>
+
+<script>
+// ========== State ==========
+let ws = null;
+let chatContainer, traceContainer, statusBadge, sendBtn, chatDot, traceDot, iterInfo;
+let msgCount = 0, rightTab = 'log', lastSessionId = null, _lastChatContent = '';
+let turnCount = 0;  // track conversation turns
+
+chatContainer = document.getElementById('chat-container');
+traceContainer = document.getElementById('trace-container');
+statusBadge = document.getElementById('status-badge');
+sendBtn = document.getElementById('send-btn');
+chatDot = document.getElementById('chat-dot');
+traceDot = document.getElementById('trace-dot');
+iterInfo = document.getElementById('iter-info');
+
+// ========== Document Bar ==========
+function toggleDocBar() {
+  const bar = document.getElementById('doc-bar');
+  const btn = document.getElementById('doc-toggle-btn');
+  bar.classList.toggle('open');
+  btn.style.background = bar.classList.contains('open') ? 'var(--purple)' : '';
+}
+
+function sendDocument() {
+  const title = document.getElementById('doc-title').value.trim();
+  const text = document.getElementById('doc-text').value.trim();
+  if (!text) return;
+  if (!ws || ws.readyState !== WebSocket.OPEN) { alert('Not connected'); return; }
+
+  addChatMsg('user', `📄 添加文档: ${title || '(无标题)'}`);
+  const sep = document.createElement('div'); sep.className = 'chat-sep'; chatContainer.appendChild(sep);
+  addChatMsg('system', `正在处理文档... 共 ${text.length} 字符`);
+
+  ws.send(JSON.stringify({type: 'rag_add', title: title, text: text}));
+  document.getElementById('doc-text').value = '';
+  document.getElementById('doc-title').value = '';
+}
+
+// ========== Chat ==========
+function clearChat() {
+  chatContainer.innerHTML = '';
+  traceContainer.innerHTML = '';
+  _lastChatContent = '';
+  turnCount = 0;
+}
+
+function addChatMsg(role, content) {
+  if (!content || content === _lastChatContent) return;
+  _lastChatContent = content;
+
+  const placeholder = chatContainer.querySelector('.chat-empty');
+  if (placeholder) placeholder.remove();
+
+  const avatarText = role === 'user' ? 'U' : (role === 'system' ? 'S' : 'AI');
+  const el = document.createElement('div');
+  el.className = 'chat-msg ' + role;
+  el.innerHTML = `<div class="avatar">${avatarText}</div><div class="bubble">${formatContent(content)}</div>`;
+  chatContainer.appendChild(el);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function updateChatProgress(text) {
+  removeTypingIndicator();
+  const el = document.createElement('div');
+  el.className = 'chat-msg assistant';
+  el.id = 'typing-indicator';
+  el.innerHTML = `<div class="avatar">AI</div><div class="bubble" style="font-size:12px;color:var(--dim);">${text}<span class="typing"></span></div>`;
+  chatContainer.appendChild(el);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function addTypingIndicator() {
+  const placeholder = chatContainer.querySelector('.chat-empty');
+  if (placeholder) placeholder.remove();
+  const el = document.createElement('div');
+  el.className = 'chat-msg assistant';
+  el.id = 'typing-indicator';
+  el.innerHTML = '<div class="avatar">AI</div><div class="bubble">Thinking<span class="typing"></span></div>';
+  chatContainer.appendChild(el);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function removeTypingIndicator() {
+  const el = document.getElementById('typing-indicator');
+  if (el) el.remove();
+}
+
+function formatContent(text) {
+  if (!text) return '';
+  return String(text)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,'<h1>$1</h1>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/\n/g,'<br/>');
+}
+
+// ========== Trace ==========
+const TL_ICONS = {thought:'💭',action:'🔧',observation:'👁',answer:'✨',error:'❌',code:'📝',decision:'🔀',info:'📌'};
+const TL_COLORS = {thought:'green',action:'cyan',observation:'purple',answer:'yellow',error:'red',code:'purple',decision:'yellow',info:'green'};
+
+function addTraceRow(type, label, body) {
+  const ph = traceContainer.querySelector('div');
+  if (ph && ph.textContent && ph.textContent.includes('will appear here')) ph.remove();
+  const icon = TL_ICONS[type] || '•';
+  const color = TL_COLORS[type] || 'green';
+  const shortBody = (body||'').replace(/\n/g,' ').slice(0, 120);
+  const time = new Date().toLocaleTimeString();
+  const el = document.createElement('div');
+  el.className = 'tl-row';
+  el.title = (body||label||'').slice(0, 300);
+  el.innerHTML = `<span class="tl-icon">${icon}</span><span class="tl-bar ${color}"></span><span class="tl-label">${label}</span><span class="tl-body">${escapeHtml(shortBody)}</span><span class="tl-time">${time}</span>`;
+  traceContainer.appendChild(el);
+  traceContainer.scrollTop = traceContainer.scrollHeight;
+}
+
+function escapeHtml(s) { if(!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ========== WebSocket ==========
+function connectWS() {
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  ws = new WebSocket(proto + '//' + location.host + '/ws');
+  ws.onopen = () => { statusBadge.textContent = 'CONNECTED'; statusBadge.className = 'badge'; };
+  ws.onmessage = (msg) => {
+    let event;
+    try { event = JSON.parse(msg.data); }
+    catch(e) { console.error('Bad JSON:', msg.data); return; }
+    handleEvent(event);
+  };
+  ws.onclose = () => { statusBadge.textContent = 'DISCONNECTED'; statusBadge.className = 'badge error'; setTimeout(connectWS, 2000); };
+  ws.onerror = () => { statusBadge.textContent = 'ERROR'; statusBadge.className = 'badge error'; };
+}
+
+function handleEvent(event) {
+  switch (event.type) {
+    case 'status':
+      statusBadge.textContent = 'PROCESSING';
+      statusBadge.className = 'badge warn';
+      chatDot.classList.add('active');
+      traceDot.classList.add('active');
+      break;
+
+    case 'memory_context':
+      addTraceRow('observation', 'Memory Recalled', event.summary || 'Relevant context found');
+      break;
+
+    case 'rag_confirm':
+      // RAG document ingested successfully
+      addChatMsg('system', `✅ ${event.message || '文档已添加到RAG知识库'}`);
+      break;
+
+    case 'agent_start':
+      if (event.agent === 'Meta') {
+        addTraceRow('thought', 'Meta 启动', '分析查询中...');
+        updateChatProgress('🤔 正在分析你的问题...');
+      } else if (event.agent === 'React') {
+        addTraceRow('action', 'React Agent: ' + (event.agent_name||''), 'Agent dispatched to handle task with tools.');
+      } else if (event.agent === 'COT') {
+        addTraceRow('action', 'CoT Agent: ' + (event.agent_name||''), 'Agent dispatched for reasoning task.');
+      } else if (event.agent === 'Tool') {
+        addTraceRow('action', 'Tool Agent', 'Invoked to manage tools.');
+      }
+      break;
+
+    case 'agent_end':
+      if (event.agent === 'Meta') addTraceRow('thought', 'Meta Agent completed', 'Orchestration finished.');
+      break;
+
+    case 'meta_decision':
+      if (event.route) {
+        iterInfo.textContent = 'Iteration ' + (event.iteration||'?');
+        addTraceRow('decision', event.route === 'Parallel' ? '并行分派' : '路由 → ' + event.route, '子Agent: ' + (event.sub_agent||'?'));
+        if (event.route === 'React') updateChatProgress('🔧 正在调用工具Agent执行任务...');
+        else if (event.route === 'COT') updateChatProgress('🧠 正在进行深度推理...');
+        else if (event.route === 'Parallel') updateChatProgress('⚡ 并行执行多个子任务...');
+      }
+      break;
+
+    case 'agent_delegate':
+      addTraceRow('action', 'Delegate → ' + (event.sub_agent||''), 'Type: ' + (event.sub_type||'') + '\nQuery: ' + ((event.query||'').slice(0,120)));
+      break;
+
+    case 'agent_return':
+      addTraceRow('observation', 'Returned: ' + (event.sub_agent||''), (event.response||'').slice(0,300));
+      break;
+
+    case 'react_thought':
+      addTraceRow('thought', 'React Thought', event.thought||'');
+      break;
+
+    case 'react_action':
+      addTraceRow('action', '调用 → ' + (event.tool_name||''), (event.tool_input ? JSON.stringify(event.tool_input).slice(0, 100) : ''));
+      updateChatProgress('🔧 ' + (event.tool_name||'工具调用') + '...');
+      break;
+
+    case 'react_observation':
+      addTraceRow('observation', 'Observation', event.observation||'');
+      break;
+
+    case 'tool_agent_invoke':
+      addTraceRow('action', 'Tool Agent Invoked', event.query||'');
+      break;
+
+    case 'tool_router':
+      addTraceRow('action', 'Tool Router → ' + (event.route||'').toUpperCase(), event.query ? event.query.slice(0,200) : '');
+      break;
+
+    case 'tool_code':
+      addTraceRow('code', 'Generated Code: ' + (event.tool_name||''), event.code||'');
+      const codeEl = document.getElementById('code-content');
+      if (codeEl) codeEl.textContent = event.code || '';
+      break;
+
+    case 'tool_error':
+      addTraceRow('error', 'Tool Error: ' + (event.route||''), event.error||'');
+      break;
+
+    case 'tool_reload':
+      addTraceRow('observation', 'Tool Reloaded', event.tool_name || '');
+      break;
+
+    case 'cot_thought':
+      addTraceRow('thought', 'CoT Thought', (event.thought||'') + '\nObservation: ' + (event.observation||''));
+      break;
+
+    case 'cot_reflection':
+      addTraceRow('thought', 'CoT Reflection', (event.reflection||''));
+      break;
+
+    case 'final_answer':
+      addTraceRow('answer', 'Answer from ' + (event.agent||'sub-agent'), event.answer||'');
+      break;
+
+    case 'final_result':
+      removeTypingIndicator();
+      addChatMsg('assistant', event.answer||'');
+      addTraceRow('answer', 'FINAL ANSWER', event.answer||'');
+      statusBadge.textContent = 'COMPLETED';
+      statusBadge.className = 'badge';
+      chatDot.classList.remove('active');
+      traceDot.classList.remove('active');
+      break;
+
+    case 'done':
+      statusBadge.textContent = 'IDLE';
+      statusBadge.className = 'badge';
+      sendBtn.disabled = false;
+      chatDot.classList.remove('active');
+      traceDot.classList.remove('active');
+      removeTypingIndicator();
+      fetchStats();
+      break;
+
+    case 'error':
+      removeTypingIndicator();
+      addChatMsg('assistant', 'Error: ' + (event.message||'Unknown error'));
+      addTraceRow('error', 'ERROR', event.message||'');
+      statusBadge.textContent = 'ERROR';
+      statusBadge.className = 'badge error';
+      sendBtn.disabled = false;
+      chatDot.classList.remove('active');
+      traceDot.classList.remove('active');
+      break;
+  }
+}
+
+// ========== Tab Switching ==========
+function switchRightTab(tab) {
+  rightTab = tab;
+  document.getElementById('trace-container').style.display = tab==='log'?'block':'none';
+  document.getElementById('code-panel').style.display = tab==='code'?'flex':'none';
+  document.getElementById('stats-container').style.display = tab==='stats'?'block':'none';
+  document.getElementById('tab-log-btn').style.background = tab==='log'?'var(--accent)':'var(--panel)';
+  document.getElementById('tab-code-btn').style.background = tab==='code'?'var(--accent)':'var(--panel)';
+  document.getElementById('tab-stats-btn').style.background = tab==='stats'?'var(--accent)':'var(--panel)';
+  document.getElementById('right-tab-label').textContent = tab==='log'?'EXECUTION TRACE':tab==='code'?'CODE PREVIEW':'PERFORMANCE STATS';
+}
+
+async function fetchStats() {
+  try {
+    const resp = await fetch('/api/traces?limit=1');
+    const data = await resp.json();
+    if (data.traces && data.traces.length > 0) {
+      const t = data.traces[0];
+      if (t.session_id === lastSessionId) return;
+      lastSessionId = t.session_id;
+      const fullResp = await fetch('/api/traces/' + t.session_id);
+      const full = await fullResp.json();
+      renderStats(t, full);
+    }
+  } catch(e) { console.error('Stats fetch error:', e); }
+}
+
+const EVENT_LABELS_ZH = {
+  'agent_start': 'Agent 启动', 'agent_end': 'Agent 结束', 'meta_decision': 'Meta 决策',
+  'agent_delegate': '任务分发', 'agent_return': '结果返回', 'react_thought': 'ReAct 推理',
+  'react_action': '工具调用', 'react_observation': '观察结果', 'tool_agent_invoke': '调用工具Agent',
+  'tool_router': '工具路由', 'tool_code': '生成代码', 'tool_error': '工具错误',
+  'tool_reload': '工具重载', 'cot_thought': 'CoT 推理', 'cot_reflection': 'CoT 反思',
+  'final_answer': '最终答案', 'final_result': '最终结果'
+};
+
+function renderStats(summary, full) {
+  const container = document.getElementById('stats-container');
+  const llmCalls = full.llm_calls || [];
+  const steps = full.agent_steps || [];
+  const totalLatency = summary.total_llm_latency_ms || 0;
+  const totalCalls = summary.total_llm_calls || 0;
+  const avgLatency = totalCalls > 0 ? Math.round(totalLatency / totalCalls) : 0;
+  const typeCounts = {};
+  steps.forEach(s => { const key = EVENT_LABELS_ZH[s.type] || s.type; typeCounts[key] = (typeCounts[key]||0) + 1; });
+  let html = '<div class="stat-section"><h4>LLM 调用</h4>';
+  html += `<div class="stat-row"><span>调用次数</span><span class="val">${totalCalls}</span></div>`;
+  html += `<div class="stat-row"><span>总延迟</span><span class="val">${(totalLatency/1000).toFixed(2)}s</span></div>`;
+  html += `<div class="stat-row"><span>平均延迟</span><span class="val">${avgLatency}ms</span></div>`;
+  const totalTokens = llmCalls.reduce((s,c) => s + (c.token_estimate||0), 0);
+  html += `<div class="stat-row"><span>估算 Token</span><span class="val">~${totalTokens}</span></div>`;
+  html += '</div><div class="stat-section"><h4>Agent 步骤统计</h4>';
+  html += `<div class="stat-row"><span>总步骤数</span><span class="val">${steps.length}</span></div>`;
+  for (const [t, n] of Object.entries(typeCounts)) {
+    html += `<div class="stat-row"><span>${t}</span><span class="val">${n}</span></div>`;
+  }
+  html += '</div>';
+  if (llmCalls.length > 0) {
+    html += '<div class="stat-section"><h4>LLM 调用明细</h4>';
+    llmCalls.forEach((c, i) => {
+      html += `<div class="stat-row"><span>第 ${i+1} 次调用</span><span class="val">${c.latency_ms}ms | ~${c.token_estimate} Token</span></div>`;
+    });
+    html += '</div>';
+  }
+  container.innerHTML = html;
+}
+
+// ========== Actions ==========
+function sendQuery() {
+  const input = document.getElementById('query-input');
+  const query = input.value.trim();
+  if (!query) return;
+  if (!ws || ws.readyState !== WebSocket.OPEN) { alert('Not connected'); return; }
+
+  sendBtn.disabled = true;
+  statusBadge.textContent = 'SENDING...';
+  statusBadge.className = 'badge warn';
+  iterInfo.textContent = '';
+  _lastChatContent = '';  // reset dedup for new turn
+
+  // Add turn separator if not first message
+  if (turnCount > 0) {
+    const sep = document.createElement('div'); sep.className = 'chat-sep'; chatContainer.appendChild(sep);
+  }
+  turnCount++;
+  traceContainer.innerHTML = '';
+
+  addChatMsg('user', query);
+  updateChatProgress('⏳ Waiting for agent...');
+
+  ws.send(query);
+  input.value = '';
+}
+
+function resetUI() {
+  clearChat();
+  addChatMsg('assistant', '你好！我是 Meta-Agent 系统。输入问题开始对话，或点击 📄 按钮添加文档到知识库。');
+  statusBadge.textContent = 'IDLE';
+  statusBadge.className = 'badge';
+  chatDot.classList.remove('active');
+  traceDot.classList.remove('active');
+  sendBtn.disabled = false;
+  iterInfo.textContent = '';
+  traceContainer.innerHTML = '<div style="color:var(--dim);font-size:13px;padding:20px;text-align:center;">Agent execution steps will appear here...</div>';
+}
+
+document.getElementById('query-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') sendQuery();
+});
+if (window.self !== window.top) { /* in iframe */ }
+
+// ========== Boot ==========
+connectWS();
+addChatMsg('assistant', '你好！我是 Meta-Agent 系统。输入问题开始对话，或点击 📄 按钮添加文档到知识库。');
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "session_id": "614ae655",
+  "query": "根据我之前添加的文档，AI的核心技术是什么？",
+  "started_at": "2026-06-23T12:14:28.746677+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "539249a8",
+      "timestamp": "2026-06-23T12:14:30.754590+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3569,
+      "output_chars": 56,
+      "token_estimate": 1035,
+      "latency_ms": 1997.9
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "da0665e5",
+      "timestamp": "2026-06-23T20:14:28.755653",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "bc1b8b73",
+      "timestamp": "2026-06-23T20:14:28.756650",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "根据您添加的文档，AI的核心技术是机器学习。",
+  "finished_at": "2026-06-23T12:14:30.756092+00:00",
+  "total_llm_latency_ms": 1997.9,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

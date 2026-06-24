@@ -1,0 +1,225 @@
+{
+  "session_id": "40ac8282",
+  "query": "帮我记住我的名字叫张崇轩，我住在北京",
+  "started_at": "2026-06-23T12:12:06.508799+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "83e73f8c",
+      "timestamp": "2026-06-23T12:12:09.789135+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 2782,
+      "output_chars": 221,
+      "token_estimate": 858,
+      "latency_ms": 3267.4
+    },
+    {
+      "id": "0d367438",
+      "timestamp": "2026-06-23T12:12:14.447967+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15731,
+      "output_chars": 354,
+      "token_estimate": 4595,
+      "latency_ms": 4649.4
+    },
+    {
+      "id": "b1851771",
+      "timestamp": "2026-06-23T12:12:19.296844+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16301,
+      "output_chars": 210,
+      "token_estimate": 4717,
+      "latency_ms": 4524.2
+    },
+    {
+      "id": "74e89524",
+      "timestamp": "2026-06-23T12:12:24.181013+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3220,
+      "output_chars": 108,
+      "token_estimate": 950,
+      "latency_ms": 4880.7
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "55452e9e",
+      "timestamp": "2026-06-23T20:12:06.518772",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "3361157f",
+      "timestamp": "2026-06-23T20:12:06.521765",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "aff24f49",
+      "timestamp": "2026-06-23T20:12:09.789637",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "9b583705",
+      "timestamp": "2026-06-23T20:12:09.791633",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "5f5ad06c",
+      "timestamp": "2026-06-23T20:12:09.797618",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "7b5b9b13",
+      "timestamp": "2026-06-23T20:12:09.798615",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "17749a98",
+      "timestamp": "2026-06-23T20:12:14.449469",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6c425449",
+      "timestamp": "2026-06-23T20:12:14.450467",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "06dcb1e1",
+      "timestamp": "2026-06-23T20:12:14.772633",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "55407d0f",
+      "timestamp": "2026-06-23T20:12:14.772633",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "413c0cd0",
+      "timestamp": "2026-06-23T20:12:19.298346",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "ddd59a09",
+      "timestamp": "2026-06-23T20:12:19.299344",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "ad3371df",
+      "timestamp": "2026-06-23T20:12:19.300341",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "b267bfc1",
+      "timestamp": "2026-06-23T20:12:19.300341",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "8ba665da",
+      "timestamp": "2026-06-23T20:12:19.300341",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已成功记住您的信息：\n- **姓名**：张崇轩\n- **居住地**：北京\n\n这些信息已存入我的长期记忆（语义记忆），我会随时为您提供帮助！😊",
+  "finished_at": "2026-06-23T12:12:24.182514+00:00",
+  "total_llm_latency_ms": 17321.7,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

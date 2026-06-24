@@ -1,0 +1,48 @@
+{
+  "session_id": "ed705440",
+  "query": "我之前让你买了哪些水果？",
+  "started_at": "2026-06-23T12:13:51.838652+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "b4f5811a",
+      "timestamp": "2026-06-23T12:13:55.109296+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3430,
+      "output_chars": 81,
+      "token_estimate": 1003,
+      "latency_ms": 3260.7
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "e3cbab6f",
+      "timestamp": "2026-06-23T20:13:51.848625",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "09522a42",
+      "timestamp": "2026-06-23T20:13:51.848625",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "根据之前的记录，您要求我创建的购物清单中包含以下水果：\n\n1. 苹果 🍎\n2. 香蕉 🍌",
+  "finished_at": "2026-06-23T12:13:55.110798+00:00",
+  "total_llm_latency_ms": 3260.7,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

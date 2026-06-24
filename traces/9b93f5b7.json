@@ -1,0 +1,48 @@
+{
+  "session_id": "9b93f5b7",
+  "query": "你有什么功能？",
+  "started_at": "2026-06-23T12:14:57.769291+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "4a4a78ae",
+      "timestamp": "2026-06-23T12:15:01.517989+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3322,
+      "output_chars": 422,
+      "token_estimate": 1069,
+      "latency_ms": 3737.7
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "b372dd9d",
+      "timestamp": "2026-06-23T20:14:57.779265",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "a1d54471",
+      "timestamp": "2026-06-23T20:14:57.780262",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "我作为Meta-Agent系统，拥有以下功能：\n\n1. **天气查询**（Weather Tool）：查询实时天气数据。\n2. **知识库检索**（RAG系统）：\n   - 添加文档到知识库（RAG Add Document Tool）\n   - 搜索知识库（RAG Search Tool）\n   - 向知识库提问（RAG Ask Tool）\n3. **记忆系统**：\n   - 记住/学习信息（Memory Remember / Memory Learn）\n   - 回忆信息（Memory Recall）\n   - 记录事件（Memory Record Event）\n4. **工具生成**：通过ToolAgent动态创建新的Python工具函数。\n5. **任务编排与分发**：将复杂任务分配给子智能体并行处理。\n\n有什么我可以帮你的吗？😊",
+  "finished_at": "2026-06-23T12:15:01.519513+00:00",
+  "total_llm_latency_ms": 3737.7,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

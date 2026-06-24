@@ -1,0 +1,48 @@
+{
+  "session_id": "188ec5d1",
+  "query": "我之前让你记住什么了",
+  "started_at": "2026-06-23T11:32:14.628845+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "2b4cd878",
+      "timestamp": "2026-06-23T11:32:16.360323+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3834,
+      "output_chars": 63,
+      "token_estimate": 1113,
+      "latency_ms": 1720.0
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "bf5f7d61",
+      "timestamp": "2026-06-23T19:32:14.638818",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "7e91c905",
+      "timestamp": "2026-06-23T19:32:14.638818",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "您之前让我记住的是：**Python 是第一编程语言**。",
+  "finished_at": "2026-06-23T11:32:16.361824+00:00",
+  "total_llm_latency_ms": 1720.0,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

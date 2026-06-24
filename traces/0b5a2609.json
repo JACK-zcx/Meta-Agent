@@ -1,0 +1,48 @@
+{
+  "session_id": "0b5a2609",
+  "query": "我之前查询过哪个文档？",
+  "started_at": "2026-06-23T12:16:09.353484+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "5d48d0af",
+      "timestamp": "2026-06-23T12:16:11.214882+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3584,
+      "output_chars": 56,
+      "token_estimate": 1040,
+      "latency_ms": 1850.4
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "fd037dec",
+      "timestamp": "2026-06-23T20:16:09.364455",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "5ae2b315",
+      "timestamp": "2026-06-23T20:16:09.364455",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "您之前查询过的文档是：**深度学习入门**。",
+  "finished_at": "2026-06-23T12:16:11.216386+00:00",
+  "total_llm_latency_ms": 1850.4,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

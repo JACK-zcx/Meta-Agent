@@ -1,0 +1,171 @@
+{
+  "session_id": "8465c9b1",
+  "query": "帮我记住Python是最好的语言",
+  "started_at": "2026-06-23T11:38:27.705636+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "4b13cb62",
+      "timestamp": "2026-06-23T11:38:29.760618+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3537,
+      "output_chars": 204,
+      "token_estimate": 1068,
+      "latency_ms": 2042.0
+    },
+    {
+      "id": "e82c4674",
+      "timestamp": "2026-06-23T11:39:04.411688+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15713,
+      "output_chars": 238,
+      "token_estimate": 4557,
+      "latency_ms": 34638.8
+    },
+    {
+      "id": "c1f50139",
+      "timestamp": "2026-06-23T11:39:06.320425+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3924,
+      "output_chars": 76,
+      "token_estimate": 1142,
+      "latency_ms": 1901.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "c5aff3ec",
+      "timestamp": "2026-06-23T19:38:27.715609",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "e8183133",
+      "timestamp": "2026-06-23T19:38:27.718601",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "35548a99",
+      "timestamp": "2026-06-23T19:38:29.761121",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "41f923a1",
+      "timestamp": "2026-06-23T19:38:29.763118",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "90211ee0",
+      "timestamp": "2026-06-23T19:38:29.771427",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "0fc61f51",
+      "timestamp": "2026-06-23T19:38:29.772425",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "d2ac2a76",
+      "timestamp": "2026-06-23T19:39:04.415679",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "34266e9d",
+      "timestamp": "2026-06-23T19:39:04.417674",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "d1a6be8e",
+      "timestamp": "2026-06-23T19:39:04.417674",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "acaccd9f",
+      "timestamp": "2026-06-23T19:39:04.418671",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "fc3868bb",
+      "timestamp": "2026-06-23T19:39:04.418671",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "好的，我已经记住了：**Python是最好的语言**。以后如果需要回忆，随时告诉我。",
+  "finished_at": "2026-06-23T11:39:06.322422+00:00",
+  "total_llm_latency_ms": 38582.0,
+  "total_llm_calls": 3,
+  "total_agent_steps": 11
+}

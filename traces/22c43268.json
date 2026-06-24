@@ -1,0 +1,48 @@
+{
+  "session_id": "22c43268",
+  "query": "计算啊 现在2026年6月23日",
+  "started_at": "2026-06-23T11:47:57.552192+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "74ebab02",
+      "timestamp": "2026-06-23T11:48:04.071997+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3393,
+      "output_chars": 64,
+      "token_estimate": 987,
+      "latency_ms": 6509.8
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "3cafdc18",
+      "timestamp": "2026-06-23T19:47:57.561171",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "b2596910",
+      "timestamp": "2026-06-23T19:47:57.562166",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "从2023年2月11日到2026年6月23日共有1228天。",
+  "finished_at": "2026-06-23T11:48:04.072998+00:00",
+  "total_llm_latency_ms": 6509.8,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

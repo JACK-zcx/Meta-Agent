@@ -1,0 +1,48 @@
+{
+  "session_id": "5475018c",
+  "query": "LangGraph是什么？用我之前告诉你的信息回答。",
+  "started_at": "2026-06-23T12:14:51.263486+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "b200ba48",
+      "timestamp": "2026-06-23T12:14:53.604438+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3448,
+      "output_chars": 80,
+      "token_estimate": 1008,
+      "latency_ms": 2330.5
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "428b781c",
+      "timestamp": "2026-06-23T20:14:51.273459",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "22555388",
+      "timestamp": "2026-06-23T20:14:51.273459",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "LangGraph 是一个用于构建有状态多Agent应用的库，这是您之前让我记住的知识点。😊",
+  "finished_at": "2026-06-23T12:14:53.605443+00:00",
+  "total_llm_latency_ms": 2330.5,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

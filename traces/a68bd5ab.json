@@ -1,0 +1,48 @@
+{
+  "session_id": "a68bd5ab",
+  "query": "帮我创建一个购物清单，我要买苹果、香蕉和牛奶",
+  "started_at": "2026-06-23T12:12:48.151192+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "13f941fb",
+      "timestamp": "2026-06-23T12:12:50.987652+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3383,
+      "output_chars": 60,
+      "token_estimate": 983,
+      "latency_ms": 2827.5
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "456252d9",
+      "timestamp": "2026-06-23T20:12:48.159170",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "91d06d81",
+      "timestamp": "2026-06-23T20:12:48.160168",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "购物清单：\n1. 苹果\n2. 香蕉\n3. 牛奶",
+  "finished_at": "2026-06-23T12:12:50.989153+00:00",
+  "total_llm_latency_ms": 2827.5,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

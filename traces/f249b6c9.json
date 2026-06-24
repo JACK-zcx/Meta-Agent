@@ -1,0 +1,48 @@
+{
+  "session_id": "f249b6c9",
+  "query": "asdfghjkl qwertyuiop zxcvbnm",
+  "started_at": "2026-06-23T12:16:20.097215+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "211af998",
+      "timestamp": "2026-06-23T12:16:22.565589+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3346,
+      "output_chars": 62,
+      "token_estimate": 973,
+      "latency_ms": 2459.4
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "9bc7d2ab",
+      "timestamp": "2026-06-23T20:16:20.106191",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "6de9002a",
+      "timestamp": "2026-06-23T20:16:20.106191",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "看起来你输入了一些随机字母？请问有什么我可以帮助你的吗？",
+  "finished_at": "2026-06-23T12:16:22.567091+00:00",
+  "total_llm_latency_ms": 2459.4,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

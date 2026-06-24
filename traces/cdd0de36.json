@@ -1,0 +1,279 @@
+{
+  "session_id": "cdd0de36",
+  "query": "查一下上海的天气，然后把结果记住",
+  "started_at": "2026-06-23T12:15:02.521511+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "66885dae",
+      "timestamp": "2026-06-23T12:15:11.186770+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3455,
+      "output_chars": 222,
+      "token_estimate": 1050,
+      "latency_ms": 8656.3
+    },
+    {
+      "id": "c76eb7ec",
+      "timestamp": "2026-06-23T12:15:16.659803+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15740,
+      "output_chars": 253,
+      "token_estimate": 4569,
+      "latency_ms": 5463.2
+    },
+    {
+      "id": "e261558b",
+      "timestamp": "2026-06-23T12:15:21.357748+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16136,
+      "output_chars": 325,
+      "token_estimate": 4703,
+      "latency_ms": 3201.0
+    },
+    {
+      "id": "b53a44d4",
+      "timestamp": "2026-06-23T12:15:24.397279+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16815,
+      "output_chars": 221,
+      "token_estimate": 4867,
+      "latency_ms": 2748.7
+    },
+    {
+      "id": "fdb7acfd",
+      "timestamp": "2026-06-23T12:15:27.275708+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3933,
+      "output_chars": 154,
+      "token_estimate": 1167,
+      "latency_ms": 2876.9
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "f881bda3",
+      "timestamp": "2026-06-23T20:15:02.530487",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "baaf6483",
+      "timestamp": "2026-06-23T20:15:02.530487",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "c0b30819",
+      "timestamp": "2026-06-23T20:15:11.188272",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "5ef6ef96",
+      "timestamp": "2026-06-23T20:15:11.188272",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "9ceaa670",
+      "timestamp": "2026-06-23T20:15:11.196251",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "7a5fcb1a",
+      "timestamp": "2026-06-23T20:15:11.196251",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "879861ac",
+      "timestamp": "2026-06-23T20:15:16.660833",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "13765196",
+      "timestamp": "2026-06-23T20:15:16.660833",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "931fecd3",
+      "timestamp": "2026-06-23T20:15:18.156247",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "1fe88c5f",
+      "timestamp": "2026-06-23T20:15:18.156750",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "65606c8c",
+      "timestamp": "2026-06-23T20:15:21.358748",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "5b6fe9e8",
+      "timestamp": "2026-06-23T20:15:21.359745",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c2229397",
+      "timestamp": "2026-06-23T20:15:21.648115",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "9a7093f5",
+      "timestamp": "2026-06-23T20:15:21.648618",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "929b678c",
+      "timestamp": "2026-06-23T20:15:24.398781",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "baa28d69",
+      "timestamp": "2026-06-23T20:15:24.398781",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "5bfc8a5d",
+      "timestamp": "2026-06-23T20:15:24.398781",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "28d7489c",
+      "timestamp": "2026-06-23T20:15:24.398781",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "d890784d",
+      "timestamp": "2026-06-23T20:15:24.398781",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "以下是上海当前的天气情况：\n\n- **天气状况**：阴云密布\n- **温度**：23.4°C\n- **湿度**：95%\n- **风速**：0.06 m/s\n\n我已经将这条天气信息记住啦！以后你问起上海天气，我会直接告诉你。☁️",
+  "finished_at": "2026-06-23T12:15:27.277208+00:00",
+  "total_llm_latency_ms": 22946.100000000002,
+  "total_llm_calls": 5,
+  "total_agent_steps": 19
+}

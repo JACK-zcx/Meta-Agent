@@ -1,0 +1,48 @@
+{
+  "session_id": "48dc7285",
+  "query": "刚刚创建了什么工具",
+  "started_at": "2026-06-23T11:49:01.559788+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "b0dbabab",
+      "timestamp": "2026-06-23T11:49:05.064239+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3550,
+      "output_chars": 89,
+      "token_estimate": 1039,
+      "latency_ms": 3494.5
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "ba60563f",
+      "timestamp": "2026-06-23T19:49:01.568763",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "6a1b02ee",
+      "timestamp": "2026-06-23T19:49:01.569761",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "您上次要求创建一个计算日期之间差多少天的工具，但系统在尝试创建时达到了迭代限制，因此该工具可能没有被成功创建。",
+  "finished_at": "2026-06-23T11:49:05.064239+00:00",
+  "total_llm_latency_ms": 3494.5,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

@@ -1,0 +1,225 @@
+{
+  "session_id": "dd9595f7",
+  "query": "把牛奶改成酸奶，然后告诉我现在清单里有什么",
+  "started_at": "2026-06-23T12:12:52.013130+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "bd62d1f3",
+      "timestamp": "2026-06-23T12:13:18.866012+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3310,
+      "output_chars": 219,
+      "token_estimate": 1008,
+      "latency_ms": 26843.9
+    },
+    {
+      "id": "b82f308d",
+      "timestamp": "2026-06-23T12:13:42.686114+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15728,
+      "output_chars": 348,
+      "token_estimate": 4593,
+      "latency_ms": 23808.6
+    },
+    {
+      "id": "47cf285c",
+      "timestamp": "2026-06-23T12:13:47.617076+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16324,
+      "output_chars": 177,
+      "token_estimate": 4714,
+      "latency_ms": 4600.2
+    },
+    {
+      "id": "07dced93",
+      "timestamp": "2026-06-23T12:13:50.838745+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3704,
+      "output_chars": 62,
+      "token_estimate": 1076,
+      "latency_ms": 3220.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "d980e1fc",
+      "timestamp": "2026-06-23T20:12:52.021147",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "aa660d2b",
+      "timestamp": "2026-06-23T20:12:52.022145",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "9c53c922",
+      "timestamp": "2026-06-23T20:13:18.867515",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "1f442f61",
+      "timestamp": "2026-06-23T20:13:18.867515",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "e8ebd633",
+      "timestamp": "2026-06-23T20:13:18.876491",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "6a3db3b5",
+      "timestamp": "2026-06-23T20:13:18.877488",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6138534c",
+      "timestamp": "2026-06-23T20:13:42.687616",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "45bb5ada",
+      "timestamp": "2026-06-23T20:13:42.687616",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "63c31f93",
+      "timestamp": "2026-06-23T20:13:43.016895",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "5d8e5529",
+      "timestamp": "2026-06-23T20:13:43.016895",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "800f74e2",
+      "timestamp": "2026-06-23T20:13:47.617579",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "cd82b279",
+      "timestamp": "2026-06-23T20:13:47.618578",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "083056cf",
+      "timestamp": "2026-06-23T20:13:47.618578",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c1394d7a",
+      "timestamp": "2026-06-23T20:13:47.618578",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "a0a51725",
+      "timestamp": "2026-06-23T20:13:47.618578",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已修改完成！现在的购物清单是：**苹果、香蕉、酸奶**。",
+  "finished_at": "2026-06-23T12:13:50.840248+00:00",
+  "total_llm_latency_ms": 58472.899999999994,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

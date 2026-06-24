@@ -1,0 +1,225 @@
+{
+  "session_id": "3b137df0",
+  "query": "请先添加文档：人工智能是计算机科学的一个分支，它研究如何让计算机模拟人类智能。机器学习是AI的核心技术。",
+  "started_at": "2026-06-23T12:14:09.920569+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "f16c3d48",
+      "timestamp": "2026-06-23T12:14:13.233340+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3381,
+      "output_chars": 253,
+      "token_estimate": 1038,
+      "latency_ms": 3301.8
+    },
+    {
+      "id": "02ecacb5",
+      "timestamp": "2026-06-23T12:14:18.697474+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15761,
+      "output_chars": 360,
+      "token_estimate": 4606,
+      "latency_ms": 5453.7
+    },
+    {
+      "id": "9dca8ae6",
+      "timestamp": "2026-06-23T12:14:25.016411+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16506,
+      "output_chars": 360,
+      "token_estimate": 4818,
+      "latency_ms": 5983.5
+    },
+    {
+      "id": "0655a301",
+      "timestamp": "2026-06-23T12:14:27.753927+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3934,
+      "output_chars": 176,
+      "token_estimate": 1174,
+      "latency_ms": 2736.0
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "f380f103",
+      "timestamp": "2026-06-23T20:14:09.930542",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "a954c567",
+      "timestamp": "2026-06-23T20:14:09.931552",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "15abe910",
+      "timestamp": "2026-06-23T20:14:13.233843",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "65131691",
+      "timestamp": "2026-06-23T20:14:13.234843",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "c57c90c4",
+      "timestamp": "2026-06-23T20:14:13.242821",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c5b923ab",
+      "timestamp": "2026-06-23T20:14:13.243818",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "0640c4f4",
+      "timestamp": "2026-06-23T20:14:18.698977",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "a9fefbf4",
+      "timestamp": "2026-06-23T20:14:18.698977",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "66de9490",
+      "timestamp": "2026-06-23T20:14:19.032892",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "887a07eb",
+      "timestamp": "2026-06-23T20:14:19.032892",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "9d51e332",
+      "timestamp": "2026-06-23T20:14:25.017913",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "b41c789d",
+      "timestamp": "2026-06-23T20:14:25.017913",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "96c83eea",
+      "timestamp": "2026-06-23T20:14:25.017913",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "347c096e",
+      "timestamp": "2026-06-23T20:14:25.017913",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "16ac3e44",
+      "timestamp": "2026-06-23T20:14:25.017913",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "文档已成功添加！\n\n- **文档ID:** `0588f17a`\n- **内容摘要:** 人工智能是计算机科学的一个分支，它研究如何让计算机模拟人类智能。机器学习是AI的核心技术。\n- **分割块数:** 1 个块\n\n该文档已进入知识库，后续可通过语义搜索或问答进行查询。",
+  "finished_at": "2026-06-23T12:14:27.755431+00:00",
+  "total_llm_latency_ms": 17475.0,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

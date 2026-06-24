@@ -1,0 +1,48 @@
+{
+  "session_id": "8826c2f0",
+  "query": "我之前让你记住什么了",
+  "started_at": "2026-06-23T11:39:07.288989+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "2e326b23",
+      "timestamp": "2026-06-23T11:39:09.837336+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3419,
+      "output_chars": 132,
+      "token_estimate": 1014,
+      "latency_ms": 2470.3
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "3d460431",
+      "timestamp": "2026-06-23T19:39:07.366066",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "0d82e47f",
+      "timestamp": "2026-06-23T19:39:07.367063",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "你让我记住的内容有：\n1. Python是第一编程语言\n2. 你的操作系统是Windows，工作目录是F:\\desktop\\Meta-Agent-with-More-Agents-main",
+  "finished_at": "2026-06-23T11:39:09.838838+00:00",
+  "total_llm_latency_ms": 2470.3,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

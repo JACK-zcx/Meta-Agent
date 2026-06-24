@@ -1,0 +1,257 @@
+[
+  {
+    "task_id": "memory_store_and_recall_1",
+    "category": "memory",
+    "metric": "recall_accuracy",
+    "turns": 2,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "memory_store_and_recall_2",
+    "category": "memory",
+    "metric": "recall_accuracy",
+    "turns": 2,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "memory_multi_turn_state_tracking",
+    "category": "memory",
+    "metric": "state_tracking",
+    "turns": 3,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 0.667
+    },
+    "score": 0.667,
+    "passed": true
+  },
+  {
+    "task_id": "tool_select_weather_1",
+    "category": "tool_use",
+    "metric": "tool_selection",
+    "turns": 1,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 0.0
+    },
+    "score": 0.0,
+    "passed": false
+  },
+  {
+    "task_id": "tool_select_rag_1",
+    "category": "tool_use",
+    "metric": "rag_retrieval",
+    "turns": 2,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 0.5
+    },
+    "score": 0.5,
+    "passed": true
+  },
+  {
+    "task_id": "tool_select_memory_1",
+    "category": "tool_use",
+    "metric": "memory_retrieval",
+    "turns": 2,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "greeting_1",
+    "category": "basic",
+    "metric": "direct_answer",
+    "turns": 1,
+    "dispatch_count": 0,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 0.25
+    },
+    "score": 0.25,
+    "passed": false
+  },
+  {
+    "task_id": "greeting_2",
+    "category": "basic",
+    "metric": "direct_answer",
+    "turns": 1,
+    "dispatch_count": 0,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "complex_1_weather_and_memory",
+    "category": "complex",
+    "metric": "multi_step",
+    "turns": 2,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "complex_2_rag_and_memory",
+    "category": "complex",
+    "metric": "multi_step",
+    "turns": 3,
+    "dispatch_count": 3,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 0.5
+    },
+    "score": 0.5,
+    "passed": true
+  },
+  {
+    "task_id": "error_empty_input",
+    "category": "robustness",
+    "metric": "no_crash",
+    "turns": 1,
+    "dispatch_count": 0,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "error_long_input",
+    "category": "robustness",
+    "metric": "no_crash",
+    "turns": 1,
+    "dispatch_count": 0,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "error_nonsense",
+    "category": "robustness",
+    "metric": "no_crash",
+    "turns": 1,
+    "dispatch_count": 0,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  },
+  {
+    "task_id": "tool_creation_1",
+    "category": "tool_creation",
+    "metric": "tool_creation",
+    "turns": 1,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 0.0,
+      "comm": 1.0,
+      "nl": 0.2
+    },
+    "score": 0.0,
+    "passed": false
+  },
+  {
+    "task_id": "parallel_1",
+    "category": "parallel",
+    "metric": "memory_batch",
+    "turns": 1,
+    "dispatch_count": 1,
+    "error_count": 0,
+    "tool_agent_triggered": false,
+    "scores": {
+      "env": 1.0,
+      "action": 1.0,
+      "comm": 1.0,
+      "nl": 1.0
+    },
+    "score": 1.0,
+    "passed": true
+  }
+]

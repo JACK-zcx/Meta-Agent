@@ -1,0 +1,48 @@
+{
+  "session_id": "60c39f03",
+  "query": "现在2026.6.23",
+  "started_at": "2026-06-23T11:47:41.390100+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "c7b35a4c",
+      "timestamp": "2026-06-23T11:47:43.234256+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3397,
+      "output_chars": 44,
+      "token_estimate": 983,
+      "latency_ms": 1832.2
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "ff418c3e",
+      "timestamp": "2026-06-23T19:47:41.401084",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "a94a8a7c",
+      "timestamp": "2026-06-23T19:47:41.402068",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "2026年6月23日",
+  "finished_at": "2026-06-23T11:47:43.235255+00:00",
+  "total_llm_latency_ms": 1832.2,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

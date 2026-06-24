@@ -1,0 +1,376 @@
+{
+  "session_id": "ec4e04fb",
+  "query": "根据知识库，Transformer主要用于什么领域？同时记住'深度学习入门'这个文档已经被查询过。",
+  "started_at": "2026-06-23T12:15:46.457130+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "43c02354",
+      "timestamp": "2026-06-23T12:15:52.664533+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3770,
+      "output_chars": 343,
+      "token_estimate": 1175,
+      "latency_ms": 6196.4
+    },
+    {
+      "id": "34c79a91",
+      "timestamp": "2026-06-23T12:15:58.742821+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15703,
+      "output_chars": 389,
+      "token_estimate": 4597,
+      "latency_ms": 6066.3
+    },
+    {
+      "id": "7e2aa39d",
+      "timestamp": "2026-06-23T12:15:59.134892+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15702,
+      "output_chars": 519,
+      "token_estimate": 4634,
+      "latency_ms": 6451.9
+    },
+    {
+      "id": "2cda739a",
+      "timestamp": "2026-06-23T12:16:04.156368+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16308,
+      "output_chars": 242,
+      "token_estimate": 4728,
+      "latency_ms": 5124.8
+    },
+    {
+      "id": "39978a3c",
+      "timestamp": "2026-06-23T12:16:04.826950+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16300,
+      "output_chars": 183,
+      "token_estimate": 4709,
+      "latency_ms": 5328.0
+    },
+    {
+      "id": "29158abe",
+      "timestamp": "2026-06-23T12:16:08.131837+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4405,
+      "output_chars": 341,
+      "token_estimate": 1356,
+      "latency_ms": 3302.9
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "1faa480d",
+      "timestamp": "2026-06-23T20:15:46.467105",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "51d87887",
+      "timestamp": "2026-06-23T20:15:46.468102",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "464b7e73",
+      "timestamp": "2026-06-23T20:15:52.665037",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "Parallel",
+        "sub_agent": "Assistant Agent, Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "96632314",
+      "timestamp": "2026-06-23T20:15:52.666036",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "71c0c04c",
+      "timestamp": "2026-06-23T20:15:52.667033",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "b0366c1a",
+      "timestamp": "2026-06-23T20:15:52.668031",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "41f8795e",
+      "timestamp": "2026-06-23T20:15:52.676009",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a9e2c45b",
+      "timestamp": "2026-06-23T20:15:52.676009",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "2216503a",
+      "timestamp": "2026-06-23T20:15:52.682005",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a88d4a2d",
+      "timestamp": "2026-06-23T20:15:52.682991",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "7085f2b5",
+      "timestamp": "2026-06-23T20:15:58.743819",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "de118c17",
+      "timestamp": "2026-06-23T20:15:58.743819",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c705058b",
+      "timestamp": "2026-06-23T20:15:59.031085",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "c61cb8ed",
+      "timestamp": "2026-06-23T20:15:59.031085",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "3d08803e",
+      "timestamp": "2026-06-23T20:15:59.136394",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "4f16abfa",
+      "timestamp": "2026-06-23T20:15:59.136394",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "df6fa9a3",
+      "timestamp": "2026-06-23T20:15:59.498430",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "0e1edbd1",
+      "timestamp": "2026-06-23T20:15:59.498430",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "0ae1d30b",
+      "timestamp": "2026-06-23T20:16:04.156870",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "ecfd4abe",
+      "timestamp": "2026-06-23T20:16:04.157869",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "b9d4e05d",
+      "timestamp": "2026-06-23T20:16:04.157869",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "348a745c",
+      "timestamp": "2026-06-23T20:16:04.157869",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "701dbd2d",
+      "timestamp": "2026-06-23T20:16:04.827950",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "d3b5a46e",
+      "timestamp": "2026-06-23T20:16:04.827950",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "aaf00b0d",
+      "timestamp": "2026-06-23T20:16:04.827950",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "18bd42ae",
+      "timestamp": "2026-06-23T20:16:04.827950",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "e4decd00",
+      "timestamp": "2026-06-23T20:16:04.828960",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "{\"action\": \"dispatch\", \"agents\": [{\"name\": \"Assistant Agent\", \"description\": \"查询知识库中Transformer的用途\", \"query\": \"Transformer主要用于什么领域？\", \"tasks\": [\"使用RAG Ask Tool向知识库提问：Transformer主要用于什么领域？\"]}, {\"name\": \"Assistant Agent\", \"description\": \"记录文档'深度学习入门'已被查询过\", \"query\": \"记住'深度学习入门'文档已被查询过\", \"tasks\": [\"使用Memory Remember Tool记录：文档'深度学习入门'已被查询过\"]}]}",
+  "finished_at": "2026-06-23T12:16:08.133377+00:00",
+  "total_llm_latency_ms": 32470.3,
+  "total_llm_calls": 6,
+  "total_agent_steps": 27
+}

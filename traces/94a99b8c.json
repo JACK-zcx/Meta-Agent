@@ -1,0 +1,48 @@
+{
+  "session_id": "94a99b8c",
+  "query": "你好！",
+  "started_at": "2026-06-23T12:14:54.717777+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "f66f2f25",
+      "timestamp": "2026-06-23T12:14:56.798071+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3751,
+      "output_chars": 63,
+      "token_estimate": 1089,
+      "latency_ms": 2070.3
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "3ac709fd",
+      "timestamp": "2026-06-23T20:14:54.726752",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "b9d3734c",
+      "timestamp": "2026-06-23T20:14:54.727749",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "你好！我是 Meta-Agent 系统，有什么可以帮你的？",
+  "finished_at": "2026-06-23T12:14:56.799573+00:00",
+  "total_llm_latency_ms": 2070.3,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

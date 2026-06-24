@@ -1,0 +1,48 @@
+{
+  "session_id": "9166f076",
+  "query": "你有什么工具",
+  "started_at": "2026-06-23T11:33:28.556628+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "e9707b17",
+      "timestamp": "2026-06-23T11:33:31.819169+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3755,
+      "output_chars": 340,
+      "token_estimate": 1170,
+      "latency_ms": 3248.6
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "ed7a9b85",
+      "timestamp": "2026-06-23T19:33:28.567599",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "34bba775",
+      "timestamp": "2026-06-23T19:33:28.570591",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "我目前有以下工具可用：\n\n- **Weather Tool**：天气查询\n- **RAG Add Document Tool**：添加文档到知识库\n- **RAG Search Tool**：搜索知识库\n- **RAG Ask Tool**：向知识库提问\n- **Memory Remember Tool**：记住信息\n- **Memory Recall Tool**：回忆信息\n- **Memory Learn Tool**：学习信息\n- **Memory Record Event Tool**：记录事件\n\n此外，我还可以通过 ToolAgent 动态生成新的 Python 工具函数。",
+  "finished_at": "2026-06-23T11:33:31.820672+00:00",
+  "total_llm_latency_ms": 3248.6,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}

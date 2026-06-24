@@ -1,0 +1,225 @@
+{
+  "session_id": "477aff1c",
+  "query": "添加这篇文档到知识库：标题为'深度学习入门'，内容是'深度学习是机器学习的一个子集，使用多层神经网络来处理复杂模式。CNN用于图像识别，RNN用于序列数据，Transformer用于自然语言处理。'",
+  "started_at": "2026-06-23T12:15:31.831423+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "442b06b8",
+      "timestamp": "2026-06-23T12:15:35.130643+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3668,
+      "output_chars": 276,
+      "token_estimate": 1126,
+      "latency_ms": 3290.2
+    },
+    {
+      "id": "4187424f",
+      "timestamp": "2026-06-23T12:15:39.337148+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15784,
+      "output_chars": 364,
+      "token_estimate": 4613,
+      "latency_ms": 4197.5
+    },
+    {
+      "id": "7644975a",
+      "timestamp": "2026-06-23T12:15:42.961575+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16599,
+      "output_chars": 334,
+      "token_estimate": 4838,
+      "latency_ms": 3294.1
+    },
+    {
+      "id": "1d3d3fb4",
+      "timestamp": "2026-06-23T12:15:45.433153+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4278,
+      "output_chars": 215,
+      "token_estimate": 1283,
+      "latency_ms": 2469.6
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "86e61bb7",
+      "timestamp": "2026-06-23T20:15:31.839401",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "8fb91d73",
+      "timestamp": "2026-06-23T20:15:31.840399",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "52795927",
+      "timestamp": "2026-06-23T20:15:35.131656",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "08a250ac",
+      "timestamp": "2026-06-23T20:15:35.131656",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "ac3fb264",
+      "timestamp": "2026-06-23T20:15:35.138634",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "2b21c0a2",
+      "timestamp": "2026-06-23T20:15:35.139632",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "48d83c53",
+      "timestamp": "2026-06-23T20:15:39.338649",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "6db2b3c7",
+      "timestamp": "2026-06-23T20:15:39.338649",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "7ca36a2a",
+      "timestamp": "2026-06-23T20:15:39.667508",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "e2c5908e",
+      "timestamp": "2026-06-23T20:15:39.667508",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "431fdf67",
+      "timestamp": "2026-06-23T20:15:42.962094",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "8871990e",
+      "timestamp": "2026-06-23T20:15:42.963093",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "032ecf96",
+      "timestamp": "2026-06-23T20:15:42.963093",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "e31b976a",
+      "timestamp": "2026-06-23T20:15:42.963093",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "6a649f31",
+      "timestamp": "2026-06-23T20:15:42.963093",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "文档《深度学习入门》已成功添加到知识库！\n\n- **文档ID：** `e6035b49`\n- **内容摘要：** 深度学习是机器学习的一个子集，使用多层神经网络来处理复杂模式。CNN用于图像识别，RNN用于序列数据，Transformer用于自然语言处理。\n- **分割块数：** 1 个块\n\n该文档已进入知识库，现在你可以基于它进行提问或检索了。😊",
+  "finished_at": "2026-06-23T12:15:45.434151+00:00",
+  "total_llm_latency_ms": 13251.4,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

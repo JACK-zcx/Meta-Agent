@@ -1,0 +1,579 @@
+{
+  "session_id": "8efd4611",
+  "query": "杭州什么天气",
+  "started_at": "2026-06-23T11:33:51.132700+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "354b4193",
+      "timestamp": "2026-06-23T11:33:53.331650+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4124,
+      "output_chars": 218,
+      "token_estimate": 1240,
+      "latency_ms": 2189.0
+    },
+    {
+      "id": "bfbfcd4d",
+      "timestamp": "2026-06-23T11:33:57.310224+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15735,
+      "output_chars": 370,
+      "token_estimate": 4601,
+      "latency_ms": 3968.6
+    },
+    {
+      "id": "e9079aeb",
+      "timestamp": "2026-06-23T11:34:00.563510+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16219,
+      "output_chars": 399,
+      "token_estimate": 4748,
+      "latency_ms": 2758.8
+    },
+    {
+      "id": "6ca29dff",
+      "timestamp": "2026-06-23T11:34:07.257260+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 4649,
+      "output_chars": 218,
+      "token_estimate": 1390,
+      "latency_ms": 6691.2
+    },
+    {
+      "id": "44e37a5f",
+      "timestamp": "2026-06-23T11:34:12.642003+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15995,
+      "output_chars": 515,
+      "token_estimate": 4717,
+      "latency_ms": 5374.3
+    },
+    {
+      "id": "624c49e6",
+      "timestamp": "2026-06-23T11:34:16.681652+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16617,
+      "output_chars": 430,
+      "token_estimate": 4870,
+      "latency_ms": 3534.6
+    },
+    {
+      "id": "bebab5ed",
+      "timestamp": "2026-06-23T11:34:18.629434+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 5174,
+      "output_chars": 218,
+      "token_estimate": 1540,
+      "latency_ms": 1946.3
+    },
+    {
+      "id": "908dca41",
+      "timestamp": "2026-06-23T11:34:34.667384+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15995,
+      "output_chars": 715,
+      "token_estimate": 4774,
+      "latency_ms": 16027.5
+    },
+    {
+      "id": "70db4e07",
+      "timestamp": "2026-06-23T11:34:38.165699+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16867,
+      "output_chars": 438,
+      "token_estimate": 4944,
+      "latency_ms": 3160.4
+    },
+    {
+      "id": "dfb36f57",
+      "timestamp": "2026-06-23T11:34:39.922007+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 5714,
+      "output_chars": 218,
+      "token_estimate": 1694,
+      "latency_ms": 1753.8
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "60ffdbfe",
+      "timestamp": "2026-06-23T19:33:51.141675",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "53839af7",
+      "timestamp": "2026-06-23T19:33:51.142673",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "e289a688",
+      "timestamp": "2026-06-23T19:33:53.332153",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "9194d7d9",
+      "timestamp": "2026-06-23T19:33:53.333152",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "7a587d94",
+      "timestamp": "2026-06-23T19:33:53.341131",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "43eac32e",
+      "timestamp": "2026-06-23T19:33:53.341131",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "12116c45",
+      "timestamp": "2026-06-23T19:33:57.311223",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "cbdec820",
+      "timestamp": "2026-06-23T19:33:57.312220",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "7e4b5c2e",
+      "timestamp": "2026-06-23T19:33:57.804217",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "5f9d40b2",
+      "timestamp": "2026-06-23T19:33:57.804720",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "4af47063",
+      "timestamp": "2026-06-23T19:34:00.565014",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "bc4e3929",
+      "timestamp": "2026-06-23T19:34:00.565014",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "7f2f0b06",
+      "timestamp": "2026-06-23T19:34:00.565014",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "ba2177a7",
+      "timestamp": "2026-06-23T19:34:00.565014",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "6e6fe694",
+      "timestamp": "2026-06-23T19:34:00.566011",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "82de8cea",
+      "timestamp": "2026-06-23T19:34:07.258765",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "39fe46ca",
+      "timestamp": "2026-06-23T19:34:07.258765",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "0755abdd",
+      "timestamp": "2026-06-23T19:34:07.267741",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "2840b9d2",
+      "timestamp": "2026-06-23T19:34:07.267741",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "3cd8dfe5",
+      "timestamp": "2026-06-23T19:34:12.643508",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "761d1103",
+      "timestamp": "2026-06-23T19:34:12.643508",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "f2036025",
+      "timestamp": "2026-06-23T19:34:13.146569",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "0f139b4f",
+      "timestamp": "2026-06-23T19:34:13.147071",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "72186021",
+      "timestamp": "2026-06-23T19:34:16.683156",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "bc1103fd",
+      "timestamp": "2026-06-23T19:34:16.683156",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "abf4b815",
+      "timestamp": "2026-06-23T19:34:16.683156",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "1017d35f",
+      "timestamp": "2026-06-23T19:34:16.683156",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "b0a19e08",
+      "timestamp": "2026-06-23T19:34:16.683156",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "d5ffba4e",
+      "timestamp": "2026-06-23T19:34:18.630936",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 3
+      }
+    },
+    {
+      "id": "25c9fbe9",
+      "timestamp": "2026-06-23T19:34:18.630936",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "931e1191",
+      "timestamp": "2026-06-23T19:34:18.638914",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "26556571",
+      "timestamp": "2026-06-23T19:34:18.639912",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "8d1ba166",
+      "timestamp": "2026-06-23T19:34:34.668886",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "fe9c99bd",
+      "timestamp": "2026-06-23T19:34:34.668886",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "8d423dac",
+      "timestamp": "2026-06-23T19:34:35.004316",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "a939baf7",
+      "timestamp": "2026-06-23T19:34:35.005314",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "a2c810b3",
+      "timestamp": "2026-06-23T19:34:38.167202",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "a48d4c7c",
+      "timestamp": "2026-06-23T19:34:38.167202",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "2d0478f0",
+      "timestamp": "2026-06-23T19:34:38.167202",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "e53c7cb9",
+      "timestamp": "2026-06-23T19:34:38.167202",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "fb9b6538",
+      "timestamp": "2026-06-23T19:34:38.168199",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 4
+      }
+    }
+  ],
+  "output": "Iteration limit reached",
+  "finished_at": "2026-06-23T11:34:39.923508+00:00",
+  "total_llm_latency_ms": 47404.50000000001,
+  "total_llm_calls": 10,
+  "total_agent_steps": 41
+}

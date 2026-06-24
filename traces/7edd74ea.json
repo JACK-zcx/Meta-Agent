@@ -1,0 +1,225 @@
+{
+  "session_id": "7edd74ea",
+  "query": "帮我记住：Python是第一编程语言",
+  "started_at": "2026-06-23T11:20:59.078208+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "f55d69d2",
+      "timestamp": "2026-06-23T11:21:01.776394+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3512,
+      "output_chars": 255,
+      "token_estimate": 1076,
+      "latency_ms": 2687.2
+    },
+    {
+      "id": "ade8e6a7",
+      "timestamp": "2026-06-23T11:21:07.689957+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 15764,
+      "output_chars": 648,
+      "token_estimate": 4689,
+      "latency_ms": 5900.6
+    },
+    {
+      "id": "ed1c7a1e",
+      "timestamp": "2026-06-23T11:21:10.234853+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 16529,
+      "output_chars": 324,
+      "token_estimate": 4815,
+      "latency_ms": 2242.8
+    },
+    {
+      "id": "d89f0b48",
+      "timestamp": "2026-06-23T11:21:12.365680+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3930,
+      "output_chars": 52,
+      "token_estimate": 1137,
+      "latency_ms": 2128.3
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "b2ad4352",
+      "timestamp": "2026-06-23T19:20:59.088239",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "2bbe31ff",
+      "timestamp": "2026-06-23T19:20:59.089236",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "8b197188",
+      "timestamp": "2026-06-23T19:21:01.777565",
+      "agent": "Meta",
+      "type": "meta_decision",
+      "data": {
+        "type": "meta_decision",
+        "agent": "Meta",
+        "route": "React",
+        "sub_agent": "Assistant Agent",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "16ba019f",
+      "timestamp": "2026-06-23T19:21:01.778002",
+      "agent": "Meta",
+      "type": "agent_delegate",
+      "data": {
+        "type": "agent_delegate",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent",
+        "sub_type": "React"
+      }
+    },
+    {
+      "id": "39dccc29",
+      "timestamp": "2026-06-23T19:21:01.787632",
+      "agent": "React",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "90207b1a",
+      "timestamp": "2026-06-23T19:21:01.788896",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "9ab68347",
+      "timestamp": "2026-06-23T19:21:07.691846",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 1
+      }
+    },
+    {
+      "id": "070048db",
+      "timestamp": "2026-06-23T19:21:07.692773",
+      "agent": "React",
+      "type": "react_action",
+      "data": {
+        "type": "react_action",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "d5e8566b",
+      "timestamp": "2026-06-23T19:21:07.992067",
+      "agent": "React",
+      "type": "react_observation",
+      "data": {
+        "type": "react_observation",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "f4b7aee3",
+      "timestamp": "2026-06-23T19:21:07.992067",
+      "agent": "React",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "e109d86f",
+      "timestamp": "2026-06-23T19:21:10.235926",
+      "agent": "React",
+      "type": "react_thought",
+      "data": {
+        "type": "react_thought",
+        "agent": "React",
+        "iteration": 2
+      }
+    },
+    {
+      "id": "0fcd812d",
+      "timestamp": "2026-06-23T19:21:10.235926",
+      "agent": "React",
+      "type": "final_answer",
+      "data": {
+        "type": "final_answer",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "9af9b560",
+      "timestamp": "2026-06-23T19:21:10.236841",
+      "agent": "React",
+      "type": "agent_end",
+      "data": {
+        "type": "agent_end",
+        "agent": "React"
+      }
+    },
+    {
+      "id": "b5c172d2",
+      "timestamp": "2026-06-23T19:21:10.236841",
+      "agent": "Meta",
+      "type": "agent_return",
+      "data": {
+        "type": "agent_return",
+        "agent": "Meta",
+        "sub_agent": "Assistant Agent"
+      }
+    },
+    {
+      "id": "5441ca16",
+      "timestamp": "2026-06-23T19:21:10.237344",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 2
+      }
+    }
+  ],
+  "output": "已记住：Python是第一编程语言。",
+  "finished_at": "2026-06-23T11:21:12.367480+00:00",
+  "total_llm_latency_ms": 12958.899999999998,
+  "total_llm_calls": 4,
+  "total_agent_steps": 15
+}

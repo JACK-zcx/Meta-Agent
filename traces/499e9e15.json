@@ -1,0 +1,48 @@
+{
+  "session_id": "499e9e15",
+  "query": "我叫什么名字？我住在哪个城市？",
+  "started_at": "2026-06-23T12:12:25.042858+00:00",
+  "status": "completed",
+  "llm_calls": [
+    {
+      "id": "1de5c113",
+      "timestamp": "2026-06-23T12:12:26.520435+00:00",
+      "model": "deepseek-v4-flash",
+      "provider": "openai_compatible",
+      "agent": "LLM",
+      "node": "invoke",
+      "input_chars": 3071,
+      "output_chars": 49,
+      "token_estimate": 891,
+      "latency_ms": 1461.6
+    }
+  ],
+  "agent_steps": [
+    {
+      "id": "7ba08d71",
+      "timestamp": "2026-06-23T20:12:25.057819",
+      "agent": "Meta",
+      "type": "agent_start",
+      "data": {
+        "type": "agent_start",
+        "agent": "Meta"
+      }
+    },
+    {
+      "id": "59b56ce6",
+      "timestamp": "2026-06-23T20:12:25.058816",
+      "agent": "Meta",
+      "type": "node_start",
+      "data": {
+        "type": "node_start",
+        "agent": "Meta",
+        "iteration": 1
+      }
+    }
+  ],
+  "output": "您的名字是张崇轩，您住在北京。",
+  "finished_at": "2026-06-23T12:12:26.521938+00:00",
+  "total_llm_latency_ms": 1461.6,
+  "total_llm_calls": 1,
+  "total_agent_steps": 2
+}
